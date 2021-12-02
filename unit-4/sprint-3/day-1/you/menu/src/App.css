@@ -1,0 +1,9 @@
+#layout{
+  height: 150px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}

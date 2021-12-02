@@ -1,0 +1,8 @@
+#homebutton {
+    background-color: rgb(238, 85, 110);
+    color: aliceblue;
+    border-radius:20px;
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+}

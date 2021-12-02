@@ -1,0 +1,8 @@
+#helpbutton {
+    background-color: rgb(158, 129, 158);
+    color: aliceblue;
+    border-radius:20px;
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+}

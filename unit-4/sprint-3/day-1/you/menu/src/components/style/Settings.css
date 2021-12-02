@@ -1,0 +1,8 @@
+#settingsbutton {
+    background-color: rgb(151, 178, 189);
+    color: aliceblue;
+    border-radius:20px;
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+}

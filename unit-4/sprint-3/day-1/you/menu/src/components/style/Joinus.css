@@ -1,0 +1,8 @@
+#joinusbutton {
+    background-color: rgb(44, 160, 206);
+    color: aliceblue;
+    border-radius:20px;
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+}
