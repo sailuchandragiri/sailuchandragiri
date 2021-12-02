@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Road to backend</h1>
+</body>
+</html>
+<script>
+    
+async function addUsers(){
+
+    let res = await fetch(`http://localhost:3000/api/products/10`,{
+        method:"PUT",
+
+        body: JSON.stringify({
+            name:"Kit",
+            price:20,
+            active:true
+
+        }),
+        headers:{"Content-Type": "application/json"},
+    });
+
+    let data = await res.json();
+
+    console.log(data);
+
+}
+
+
+addUsers();
+    //1. url
+    //2. fetch
+</script>

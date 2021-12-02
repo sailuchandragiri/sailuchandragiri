@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show popup</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style type="text/css">
+        #container{
+            position: absolute;
+            left: 35%;
+            top: 10%;
+            width: 25%;
+            padding: 20px;
+            border: 1px solid red;
+            box-shadow: 0px 0px 10px red;
+            display: none;
+        }
+        #close-container{
+            float: right;
+            background-color: skyblue;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="show">Show</button>
+    <div id="container">
+        <button id="close-container">
+            <span id="close">Close</span>
+        </button>
+       <img src="https://tse3.mm.bing.net/th?id=OIP.39yvWBXzbSOY-zcrLylKcwHaDt&pid=Api&P=0&w=323&h=163">
+    </div>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+            //show popup
+            $("#show").click(function(){
+                $("#container").show()
+            })
+            //close popup
+            $("#close").click(function(){
+                $("#container").hide();
+            })
+        })
+
+
+    </script>
+</body>
+</html>

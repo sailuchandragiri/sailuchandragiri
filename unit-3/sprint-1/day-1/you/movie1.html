@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('https://tse1.mm.bing.net/th?id=OIP.pQBDt-nG7qTiG_0EigBqVQHaEo&pid=Api&P=0&w=257&h=161');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .mov, .mov1, .mov3{
+            color: white;
+        }
+        #movie2{
+            color: white;
+            font-size: 1500%;
+            margin-left: 15%;
+        }
+        #move{
+            margin-left: 35%;
+            font-size: 200%;
+            margin-top: 2%;
+        }
+        #btn{
+            margin-top: 2%;
+            font-size: 200%;
+
+        }
+        #movie1{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="movie2">Movie World</div>
+    <input type="text" id="move" placeholder="Enter movie name"/>
+    <input id="btn" onclick="getMovie()" type="button" value="Search" />
+    <div id="movie1">
+    </div>
+</body>
+</html>
+<script>
+    let container = document.getElementById("movie1");
+    async function getMovie(){
+        let movie = document.getElementById("move").value;
+        let response = await fetch(`http://www.omdbapi.com/?t=${movie}&apikey=792adc68`);
+        let data = await response.json();
+        console.log(data);
+        
+        let data1 = document.createElement("div");
+       
+        let title = document.createElement('h1');
+        data1.setAttribute("class", "mov");
+        title.innerText=data.Title;
+    
+
+        let image = document.createElement('img');
+        image.src = data.Poster;
+
+        let actors = document.createElement('div');
+        data1.setAttribute('class', 'mov2');
+        actors.innerText="Actors: "+data.Actors;
+
+        let year = document.createElement('div');
+        data1.setAttribute("class", "mov1");
+        year.innerText="Released: "+data.Released;
+
+        let rating = document.createElement('div');
+        data1.setAttribute("class", "mov3");
+        rating.innerText="Rating: "+data.imdbRating;
+        
+        data1.append(title, image, actors, year, rating);
+        container.append(data1);
+        
+    }
+
+
+</script>

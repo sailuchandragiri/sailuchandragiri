@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+   
+    </style>
+    <link type="text/css" href="./css/style.css">
+  
+</head>
+<body>
+<div id="Home"></div>
+<div id="sidebar">
+    <h3><a href="/"><img src="https://tse4.mm.bing.net/th?id=OIP.udkE3kiPD5k6O2kG9PDtNgAAAA&pid=Api&P=0&w=300&h=300" height="100px" width="100px"></a></h3>
+    <h2>Login</h2>
+    <div id="options">
+    <h2><a href="search.html">Search</a></h2>
+    <h2><a href="home.html">Home</a></h2>
+    <h2><a href="news.html">News</a></h2>
+    <h2>Disrupt</h2>
+    <h2>Startups</h2>
+    <h2>Videos</h2>
+    <h2>Audio</h2>
+    <h2>Newsletters</h2>
+    <h2>Extra Crunch</h2>
+    <h2>EC-1s</h2>
+    <h2>Advertise</h2>
+    <h2>Events</h2>
+    <h2>More</h2>
+    </div>
+</div>
+</body>
+
+</html>
+<script type="module" type="text/javascript">
+
+    import {getData, append} from "./components/showData.js";
+     getData("https://newsapi.org/v2/everything?q=tesla&from=2021-08-13&sortBy=publishedAt&apiKey=a680de00e2054459b4b3d6f1443f1f87").then((response) => {
+         let place = document.getElementById("data");
+         console.log(data);
+         append(response, data);
+     });
+</script>

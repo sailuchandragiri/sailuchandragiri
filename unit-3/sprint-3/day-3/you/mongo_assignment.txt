@@ -1,0 +1,633 @@
+sailu@sailu-VivoBook-ASUSLaptop-X415JA-X415JA:~$ mongo
+MongoDB shell version v4.4.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("01b0b92f-8fad-4880-83eb-bf398043da38") }
+MongoDB server version: 4.4.8
+---
+The server generated these startup warnings when booting: 
+        2021-09-17T07:35:06.060+05:30: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2021-09-17T07:35:07.097+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+test    0.000GB
+test1   0.000GB
+> 
+> 
+> use assignment
+switched to db assignment
+> 
+> db
+assignment
+> 
+> 
+> db.createCollection("users")
+{ "ok" : 1 }
+> 
+> db.users.insert({"first_name":"Howie","last_name":"Hansbury","email":"hhansbury9@dailymail.co.uk","gender":"Polygender","ip_address":"59.197.207.191","age":58})
+WriteResult({ "nInserted" : 1 })
+> 
+> db.users.find()
+{ "_id" : ObjectId("614450411d61645c1e969fb2"), "first_name" : "Howie", "last_name" : "Hansbury", "email" : "hhansbury9@dailymail.co.uk", "gender" : "Polygender", "ip_address" : "59.197.207.191", "age" : 58 }
+> do.users.find().pretty()
+uncaught exception: SyntaxError: expected expression, got '.' :
+@(shell):1:2
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("614450411d61645c1e969fb2"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+> db.users.insertMany([{"first_name":"Forrester","last_name":"Schulze","email":"fschulze0@utexas.edu","gender":"Genderfluid","ip_address":"104.210.7.101","age":51},
+... {"first_name":"Damara","last_name":"Donnan","email":"ddonnan1@qq.com","gender":"Genderqueer","ip_address":"221.129.115.48","age":51},
+... {"first_name":"Trueman","last_name":"Winman","email":"twinman2@washington.edu","gender":"Male","ip_address":"135.199.122.86","age":28},
+... {"first_name":"Augustine","last_name":"Lacey","email":"alacey3@digg.com","gender":"Genderfluid","ip_address":"40.139.169.83","age":90},
+... {"first_name":"Menard","last_name":"Seilmann","email":"mseilmann4@etsy.com","gender":"Polygender","ip_address":"143.109.172.228","age":71},
+... {"first_name":"Eamon","last_name":"Gillhespy","email":"egillhespy5@webs.com","gender":"Genderfluid","ip_address":"154.87.249.215","age":82},
+... {"first_name":"Donella","last_name":"Blakeney","email":"dblakeney6@squarespace.com","gender":"Male","ip_address":"2.219.24.210","age":93},
+... {"first_name":"Calli","last_name":"Windridge","email":"cwindridge7@surveymonkey.com","gender":"Male","ip_address":"114.49.79.164","age":89},
+... {"first_name":"Tremayne","last_name":"Dupre","email":"tdupre8@utexas.edu","gender":"Genderfluid","ip_address":"154.166.49.40","age":52},
+... {"first_name":"Howie","last_name":"Hansbury","email":"hhansbury9@dailymail.co.uk","gender":"Polygender","ip_address":"59.197.207.191","age":58}])
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("6144509e1d61645c1e969fb3"),
+		ObjectId("6144509e1d61645c1e969fb4"),
+		ObjectId("6144509e1d61645c1e969fb5"),
+		ObjectId("6144509e1d61645c1e969fb6"),
+		ObjectId("6144509e1d61645c1e969fb7"),
+		ObjectId("6144509e1d61645c1e969fb8"),
+		ObjectId("6144509e1d61645c1e969fb9"),
+		ObjectId("6144509e1d61645c1e969fba"),
+		ObjectId("6144509e1d61645c1e969fbb"),
+		ObjectId("6144509e1d61645c1e969fbc")
+	]
+}
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("614450411d61645c1e969fb2"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb3"),
+	"first_name" : "Forrester",
+	"last_name" : "Schulze",
+	"email" : "fschulze0@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "104.210.7.101",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb4"),
+	"first_name" : "Damara",
+	"last_name" : "Donnan",
+	"email" : "ddonnan1@qq.com",
+	"gender" : "Genderqueer",
+	"ip_address" : "221.129.115.48",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb5"),
+	"first_name" : "Trueman",
+	"last_name" : "Winman",
+	"email" : "twinman2@washington.edu",
+	"gender" : "Male",
+	"ip_address" : "135.199.122.86",
+	"age" : 28
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb6"),
+	"first_name" : "Augustine",
+	"last_name" : "Lacey",
+	"email" : "alacey3@digg.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "40.139.169.83",
+	"age" : 90
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb7"),
+	"first_name" : "Menard",
+	"last_name" : "Seilmann",
+	"email" : "mseilmann4@etsy.com",
+	"gender" : "Polygender",
+	"ip_address" : "143.109.172.228",
+	"age" : 71
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb8"),
+	"first_name" : "Eamon",
+	"last_name" : "Gillhespy",
+	"email" : "egillhespy5@webs.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.87.249.215",
+	"age" : 82
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb9"),
+	"first_name" : "Donella",
+	"last_name" : "Blakeney",
+	"email" : "dblakeney6@squarespace.com",
+	"gender" : "Male",
+	"ip_address" : "2.219.24.210",
+	"age" : 93
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fba"),
+	"first_name" : "Calli",
+	"last_name" : "Windridge",
+	"email" : "cwindridge7@surveymonkey.com",
+	"gender" : "Male",
+	"ip_address" : "114.49.79.164",
+	"age" : 89
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fbb"),
+	"first_name" : "Tremayne",
+	"last_name" : "Dupre",
+	"email" : "tdupre8@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.166.49.40",
+	"age" : 52
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fbc"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+> db.users.findOne({"first_name":"Howie"}).pretty()
+uncaught exception: TypeError: db.users.findOne(...).pretty is not a function :
+@(shell):1:1
+> db.users.findOne({"first_name":"Howie"})
+{
+	"_id" : ObjectId("614450411d61645c1e969fb2"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+> db
+assignment
+> 
+> db.users.update({^C
+bye
+sailu@sailu-VivoBook-ASUSLaptop-X415JA-X415JA:~$ mongo
+MongoDB shell version v4.4.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("2073c232-985d-4dc4-b568-30bb374e208d") }
+MongoDB server version: 4.4.8
+---
+The server generated these startup warnings when booting: 
+        2021-09-17T07:35:06.060+05:30: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2021-09-17T07:35:07.097+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> db
+test
+> show dbs
+admin       0.000GB
+assignment  0.000GB
+config      0.000GB
+local       0.000GB
+test        0.000GB
+test1       0.000GB
+> use assignment
+switched to db assignment
+> 
+> 
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("614450411d61645c1e969fb2"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb3"),
+	"first_name" : "Forrester",
+	"last_name" : "Schulze",
+	"email" : "fschulze0@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "104.210.7.101",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb4"),
+	"first_name" : "Damara",
+	"last_name" : "Donnan",
+	"email" : "ddonnan1@qq.com",
+	"gender" : "Genderqueer",
+	"ip_address" : "221.129.115.48",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb5"),
+	"first_name" : "Trueman",
+	"last_name" : "Winman",
+	"email" : "twinman2@washington.edu",
+	"gender" : "Male",
+	"ip_address" : "135.199.122.86",
+	"age" : 28
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb6"),
+	"first_name" : "Augustine",
+	"last_name" : "Lacey",
+	"email" : "alacey3@digg.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "40.139.169.83",
+	"age" : 90
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb7"),
+	"first_name" : "Menard",
+	"last_name" : "Seilmann",
+	"email" : "mseilmann4@etsy.com",
+	"gender" : "Polygender",
+	"ip_address" : "143.109.172.228",
+	"age" : 71
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb8"),
+	"first_name" : "Eamon",
+	"last_name" : "Gillhespy",
+	"email" : "egillhespy5@webs.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.87.249.215",
+	"age" : 82
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb9"),
+	"first_name" : "Donella",
+	"last_name" : "Blakeney",
+	"email" : "dblakeney6@squarespace.com",
+	"gender" : "Male",
+	"ip_address" : "2.219.24.210",
+	"age" : 93
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fba"),
+	"first_name" : "Calli",
+	"last_name" : "Windridge",
+	"email" : "cwindridge7@surveymonkey.com",
+	"gender" : "Male",
+	"ip_address" : "114.49.79.164",
+	"age" : 89
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fbb"),
+	"first_name" : "Tremayne",
+	"last_name" : "Dupre",
+	"email" : "tdupre8@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.166.49.40",
+	"age" : 52
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fbc"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+> 
+> db.users.update({"_id" : ObjectId("6144509e1d61645c1e969fbc")},{$set:{"age":"37"})
+... 
+... 
+> db.users.update({"_id" : ObjectId("6144509e1d61645c1e969fbc")},{$set:{"age":"37"})
+... 
+... 
+> db.users.update({"_id" : "6144509e1d61645c1e969fbc"},{$set:{"age":"37"})
+... 
+... 
+> 
+> db.users.update({"_id" : "6144509e1d61645c1e969fbc"},{$set:{"age":"37"}})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> 
+> db.users.update({"_id" : ObjectId("6144509e1d61645c1e969fbc")},{$set:{"age":"37"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> 
+> db.users.updateMany({"gender" : "Male"}, {$set:{"gender":"Female"}})
+{ "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 3 }
+> 
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("614450411d61645c1e969fb2"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb3"),
+	"first_name" : "Forrester",
+	"last_name" : "Schulze",
+	"email" : "fschulze0@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "104.210.7.101",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb4"),
+	"first_name" : "Damara",
+	"last_name" : "Donnan",
+	"email" : "ddonnan1@qq.com",
+	"gender" : "Genderqueer",
+	"ip_address" : "221.129.115.48",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb5"),
+	"first_name" : "Trueman",
+	"last_name" : "Winman",
+	"email" : "twinman2@washington.edu",
+	"gender" : "Female",
+	"ip_address" : "135.199.122.86",
+	"age" : 28
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb6"),
+	"first_name" : "Augustine",
+	"last_name" : "Lacey",
+	"email" : "alacey3@digg.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "40.139.169.83",
+	"age" : 90
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb7"),
+	"first_name" : "Menard",
+	"last_name" : "Seilmann",
+	"email" : "mseilmann4@etsy.com",
+	"gender" : "Polygender",
+	"ip_address" : "143.109.172.228",
+	"age" : 71
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb8"),
+	"first_name" : "Eamon",
+	"last_name" : "Gillhespy",
+	"email" : "egillhespy5@webs.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.87.249.215",
+	"age" : 82
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb9"),
+	"first_name" : "Donella",
+	"last_name" : "Blakeney",
+	"email" : "dblakeney6@squarespace.com",
+	"gender" : "Female",
+	"ip_address" : "2.219.24.210",
+	"age" : 93
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fba"),
+	"first_name" : "Calli",
+	"last_name" : "Windridge",
+	"email" : "cwindridge7@surveymonkey.com",
+	"gender" : "Female",
+	"ip_address" : "114.49.79.164",
+	"age" : 89
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fbb"),
+	"first_name" : "Tremayne",
+	"last_name" : "Dupre",
+	"email" : "tdupre8@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.166.49.40",
+	"age" : 52
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fbc"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : "37"
+}
+> 
+> db.users.remove({"_id" : ObjectId("6144509e1d61645c1e969fbc")})
+WriteResult({ "nRemoved" : 1 })
+> 
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("614450411d61645c1e969fb2"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb3"),
+	"first_name" : "Forrester",
+	"last_name" : "Schulze",
+	"email" : "fschulze0@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "104.210.7.101",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb4"),
+	"first_name" : "Damara",
+	"last_name" : "Donnan",
+	"email" : "ddonnan1@qq.com",
+	"gender" : "Genderqueer",
+	"ip_address" : "221.129.115.48",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb5"),
+	"first_name" : "Trueman",
+	"last_name" : "Winman",
+	"email" : "twinman2@washington.edu",
+	"gender" : "Female",
+	"ip_address" : "135.199.122.86",
+	"age" : 28
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb6"),
+	"first_name" : "Augustine",
+	"last_name" : "Lacey",
+	"email" : "alacey3@digg.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "40.139.169.83",
+	"age" : 90
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb7"),
+	"first_name" : "Menard",
+	"last_name" : "Seilmann",
+	"email" : "mseilmann4@etsy.com",
+	"gender" : "Polygender",
+	"ip_address" : "143.109.172.228",
+	"age" : 71
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb8"),
+	"first_name" : "Eamon",
+	"last_name" : "Gillhespy",
+	"email" : "egillhespy5@webs.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.87.249.215",
+	"age" : 82
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb9"),
+	"first_name" : "Donella",
+	"last_name" : "Blakeney",
+	"email" : "dblakeney6@squarespace.com",
+	"gender" : "Female",
+	"ip_address" : "2.219.24.210",
+	"age" : 93
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fba"),
+	"first_name" : "Calli",
+	"last_name" : "Windridge",
+	"email" : "cwindridge7@surveymonkey.com",
+	"gender" : "Female",
+	"ip_address" : "114.49.79.164",
+	"age" : 89
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fbb"),
+	"first_name" : "Tremayne",
+	"last_name" : "Dupre",
+	"email" : "tdupre8@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.166.49.40",
+	"age" : 52
+}
+> 
+> 
+> db.users.remove({"gender" : "Female"})
+WriteResult({ "nRemoved" : 3 })
+> 
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("614450411d61645c1e969fb2"),
+	"first_name" : "Howie",
+	"last_name" : "Hansbury",
+	"email" : "hhansbury9@dailymail.co.uk",
+	"gender" : "Polygender",
+	"ip_address" : "59.197.207.191",
+	"age" : 58
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb3"),
+	"first_name" : "Forrester",
+	"last_name" : "Schulze",
+	"email" : "fschulze0@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "104.210.7.101",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb4"),
+	"first_name" : "Damara",
+	"last_name" : "Donnan",
+	"email" : "ddonnan1@qq.com",
+	"gender" : "Genderqueer",
+	"ip_address" : "221.129.115.48",
+	"age" : 51
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb6"),
+	"first_name" : "Augustine",
+	"last_name" : "Lacey",
+	"email" : "alacey3@digg.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "40.139.169.83",
+	"age" : 90
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb7"),
+	"first_name" : "Menard",
+	"last_name" : "Seilmann",
+	"email" : "mseilmann4@etsy.com",
+	"gender" : "Polygender",
+	"ip_address" : "143.109.172.228",
+	"age" : 71
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fb8"),
+	"first_name" : "Eamon",
+	"last_name" : "Gillhespy",
+	"email" : "egillhespy5@webs.com",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.87.249.215",
+	"age" : 82
+}
+{
+	"_id" : ObjectId("6144509e1d61645c1e969fbb"),
+	"first_name" : "Tremayne",
+	"last_name" : "Dupre",
+	"email" : "tdupre8@utexas.edu",
+	"gender" : "Genderfluid",
+	"ip_address" : "154.166.49.40",
+	"age" : 52
+}
+> 
+> 
+> db
+assignment
+> 
+> db.dropDatabase()
+{ "dropped" : "assignment", "ok" : 1 }
+> 
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+test    0.000GB
+test1   0.000GB
+> 

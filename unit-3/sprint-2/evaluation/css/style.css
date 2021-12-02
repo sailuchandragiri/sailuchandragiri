@@ -1,0 +1,37 @@
+#Home{
+    display: flex;
+    flex-direction: row;
+    width: 850px;
+    height: 100%;
+    margin-left: 200px;
+    background-color: aqua;
+}
+
+#data{
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    padding: 3%;
+    justify-content: space-between;
+    grid-gap: 3px;
+}
+
+
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    padding-right: 4%;
+
+
+}
+#options{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+#options h2{
+    padding-left: 30px;
+    padding-right: 10px;
+    
+}

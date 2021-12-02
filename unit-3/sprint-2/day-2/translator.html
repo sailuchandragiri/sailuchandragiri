@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            background-image: url('https://tse3.mm.bing.net/th?id=OIP.zTuOkn6RkvWuMzHbSxXy4AHaE8&pid=Api&P=0&w=256&h=172');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        #border{
+            height: 600px;
+            width: 950px;
+            border: 3px solid black;
+            margin: auto;
+            
+            display: flex;
+            flex-direction: column;
+
+        }
+        #search{
+            height: 10%;
+            width: 900px;
+            
+            margin-left: 2%;
+        }
+        #layout{
+            height: 70%;
+            width: 900px;
+            display: flex;  
+
+            padding-top: 5%;
+            margin-left: 2%;
+        }
+        #left{
+            height: 90%;
+            width: 47%;
+            border: 3px solid rgb(202, 77, 77);
+            background-color: white;
+            font-size: 30px;
+        }
+        #right{
+            height: 90%;
+            width: 47%;
+            border: 3px solid rgb(202, 77, 77);
+            background-color: white;
+            font-size: 30px;
+        }
+        #switch{
+            height: 15%;
+            width: 100%;
+            
+            margin-top: 2%;
+            display: flex;
+            gap: 5%;
+            padding-left: 11%;
+
+        
+        }
+        #mick{
+            height: 60%;
+            width: 20%;
+            border: 1px solid green;
+            font-size: 25px;
+            padding-top: 2%;
+            padding-left: 3.5%;
+            color: white;
+            background-color: rgb(84, 167, 84);
+            border-radius: 10%;
+
+        }
+        #submit{
+            height: 60%;
+            width: 16%;
+            border: 1px solid palevioletred;
+            font-size: 25px;
+            padding-left: 5%;
+            padding-top: 2%;
+            color: white;
+            background-color: rgb(221, 127, 221);
+            border-radius: 10%;
+        }
+        #audio{
+            height: 60%;
+            width: 18%;
+            border: 1px solid blue;
+            font-size: 25px;
+            padding-left: 6%;
+            padding-top: 2%;
+            color: white;
+            background-color: rgb(10, 172, 172);
+            border-radius: 10%;
+
+        }
+        #search{
+            font-size: 25px;
+            padding-left: 30%;
+        }
+        img{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div><img src="https://tse1.mm.bing.net/th?id=OIP.C4WRjtxgoqh9hnME-D3NNwHaDn&pid=Api&P=0&w=362&h=177" width="10%" height="10%"></div>
+    <div id="border">
+        <div id="search">
+            <label for="language_select">Choose a Language</label>
+            <select id="sear" name="language" onchange="Values()">
+                <option value="">--Please choose an option--</option>
+            </select>
+        </div>
+        <div id="layout">
+            <textarea id="left" placeholder="Enter the text"></textarea>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.wFPT4B4KYw1FjFpA09blqgHaLG&pid=Api&P=0&w=300&h=300" width="20%" height="90%">
+            <textarea id="right" placeholder="See the output"></textarea>
+        </div>
+        <div id="switch">
+            <div id="mick">Click to Speak</div>
+            <div id="submit">Translate</div>
+            <div id="audio">Speak Out</div>
+        </div>
+    </div>
+
+    <script type="module" type="text/javascript">
+        async function Accept() {
+            let res = await fetch(`https://libretranslate.de/languages`);
+            let data = await res.json();
+            Language(data);
+        }
+        Accept();
+        
+        function Language(lang) {
+            let languages = document.getElementById("sear")
+            lang.forEach((elements) => {
+                let option = document.createElement("option");
+                option.value = elements.code;
+                option.innerText = elements.name;
+                languages.append(option);
+            })
+        }
+
+        function Values() {
+            let language_values = document.getElementById("sear").value;
+            return language_values;
+        };
+        async function identifyLanguage() {
+            const res = await fetch("https://libretranslate.de/detect", {
+                method: "POST",
+                body: JSON.stringify({
+                    q: "hola",
+                    source: "en",
+                    target: "es",
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
+
+            console.log(await res.json());
+
+        }
+
+
+    
+        function Gathered() {
+            let inputdata = document.getElementById("left");
+            return inputdata.value;
+        }
+        let userdata = Gathered();
+        async function traslate() {
+            const response = await fetch("https://libretranslate.de/translate", {
+                method: "POST",
+                body: JSON.stringify({
+                    q: Gathered(),
+                    source: "en",
+                    target: Values(),
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
+
+            let data = await response.json();
+            let {
+                translatedText
+            } = data;
+            OutputResults(translatedText);
+        }
+        let btn = document.getElementById("submit");
+        btn.onclick = () => {
+            let lag = document.getElementById("left");
+            traslate()
+        }
+
+        function OutputResults(data) {
+            let right_box = document.getElementById("right");
+            right_box.value = data;
+        }
+    </script>
+</body>
+</html>

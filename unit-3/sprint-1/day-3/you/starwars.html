@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWars</title>
+    <style type="text/css">
+        #container {
+            width: 100%;
+            height: 930px;
+            /* background-color: black; */
+        }
+        
+        #search {
+            width: 40%;
+            height: 40px;
+            border-radius: 20px;
+            margin-left: 30%;
+            margin-top: 1%;
+            padding-left: 1%;
+            background-color: #BDBDBD;
+            border: none;
+        }
+        
+        .logo {
+            width: 30%;
+            /* height: 200px; */
+            margin-left: 35%;
+            margin-top: 10%;
+        }
+        
+        #input {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        #btn {
+            background: yellow;
+            color: white;
+            margin-top: 1.2%;
+            margin-right: 30%;
+            border-radius: 15px;
+            margin-right: 50px;
+            height: 30px;
+            width: 30px;
+            margin-left: -50px;
+            border: none;
+        }
+        
+        #starwar_details {
+            width: 40%;
+            height: 200px;
+            border-top: none;
+            color: white;
+            margin-left: 30%;
+            padding-left: 1%;
+        }
+        
+        body {
+            background: url("http://wallpapercave.com/wp/pEeUsp1.jpg");
+            font-size: 16px;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: .5;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+        
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+        
+        .bg3 {
+            animation-duration: 5s;
+        }
+        
+        .content {
+            background-color: rgba(255, 255, 255, .8);
+            border-radius: .25em;
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            left: 50%;
+            padding: 10vmin;
+            position: fixed;
+            text-align: center;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        h1 {
+            font-family: monospace;
+        }
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+            100% {
+                transform: translateX(25%);
+            }
+        }
+        
+        right-col {
+            float: right;
+            margin-right: 6%;
+            margin-left: 80%;
+            display: flex;
+            align-items: center;
+        }
+        
+        #icon {
+            width: 80px;
+            margin-left: 90%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="right-col">
+            <img src="media/play.jpg" id="icon" />
+        </div>
+        <img class="logo" src="https://www.freepnglogos.com/uploads/star-wars-logo-png-8.png" />
+        <div id="input">
+            <input id="search" type="text" oninput="debounce(main, 1000)" placeholder="Search for a StarWars" />
+            <input id="btn" type="button" value="&#128269;" />
+        </div>
+        <div id="starwar_details"></div>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+    </div>
+    <audio id="mysong">
+        <source src="media/song.mp3" type="audio/mp3">
+    </audio>
+    <script type="text/javascript">
+        let details = document.getElementById("starwar_details");
+        async function MakeDetails(name) {
+            try {
+                let respose = await fetch(`https://swapi.dev/api/people/?search=${name}`);
+                let data = await respose.json();
+                return data.results;
+                console.log(data)
+            } catch (error) {
+                alert("Details Not Found");
+            }
+        }
+
+        function appendDetails(m) {
+            details.innerHTML = null;
+            m.forEach(({
+                name,
+                gender,
+                height,
+                skin_color
+            }) => {
+                let p = document.createElement("div");
+                p.innerText = "Name : " + name;
+                let g = document.createElement("div");
+                g.innerText = "Gender : " + gender;
+                let h = document.createElement("div");
+                h.innerText = "Height : " + height;
+                let s = document.createElement("div");
+                s.innerText = "Skin_Color : " + skin_color;
+                let line = document.createElement("hr");
+                details.append(p, g, h, s, line);
+            });
+        }
+        async function main() {
+            let name = document.getElementById("search").value;
+            if (name.length < 3) {
+                return false;
+            }
+            let starwar_dtls = await MakeDetails(name);
+            if (starwar_dtls === undefined) {
+                return false;
+            }
+            appendDetails(starwar_dtls);
+            console.log(starwar_dtls);
+        }
+        var timeId;
+
+        function debounce(func, delay) {
+            let name = document.getElementById("search").value;
+            if (name.length < 3) {
+                return false;
+            }
+            if (timeId) {
+                clearTimeout(timeId);
+            }
+            timeId = setTimeout(() => {
+                func();
+            }, delay);
+        }
+
+        let btn = document.getElementById("search");
+        btn.onclick = function changecolor() {
+            let starwar_div = document.getElementById("starwar_details");
+            starwar_div.style.backgroundColor = "#9E9E9E";
+            starwar_div.style.display = "inline - block";
+            starwar_div.style.overflow = "scroll";
+            starwar_div.style.color = "black";
+        }
+
+
+        let mysong = document.getElementById("mysong");
+        let icon = document.getElementById("icon");
+        icon.onclick = function() {
+            if (mysong.paused) {
+                mysong.play();
+                icon.src = "media/pause.jpg";
+            } else {
+                mysong.pause();
+                icon.src = "media/play.jpg";
+            }
+        }
+    </script>
+</body>
+
+</html>

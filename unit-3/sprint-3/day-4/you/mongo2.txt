@@ -1,0 +1,2602 @@
+sailu@sailu-VivoBook-ASUSLaptop-X415JA-X415JA:~/Downloads$ mongo
+MongoDB shell version v4.4.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("236ee076-3679-42de-ba0e-e1bddbfb9fec") }
+MongoDB server version: 4.4.8
+---
+The server generated these startup warnings when booting: 
+        2021-09-18T08:36:30.661+05:30: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2021-09-18T08:36:37.763+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> 
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+movies  0.000GB
+test    0.000GB
+test1   0.000GB
+> 
+> 
+> db.users.find({}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062368"),
+	"id" : 7,
+	"movie_name" : "Undead",
+	"movie_genre" : "Action|Comedy|Horror|Sci-Fi",
+	"production_year" : 1997,
+	"budget" : 9447
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236a"),
+	"id" : 10,
+	"movie_name" : "Slumber Party Massacre, The",
+	"movie_genre" : "Horror",
+	"production_year" : 1995,
+	"budget" : 14223
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236c"),
+	"id" : 14,
+	"movie_name" : "How to Make an American Quilt",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1986,
+	"budget" : 11764
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236d"),
+	"id" : 13,
+	"movie_name" : "World of Suzie Wong, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1993,
+	"budget" : 14634
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236e"),
+	"id" : 15,
+	"movie_name" : "Shaka Zulu: The Citadel",
+	"movie_genre" : "Drama",
+	"production_year" : 1995,
+	"budget" : 11499
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236f"),
+	"id" : 16,
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 1991,
+	"budget" : 9347
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062371"),
+	"id" : 2,
+	"movie_name" : "My Little Pony: Equestria Girls",
+	"movie_genre" : "Animation|Children|Fantasy",
+	"production_year" : 2003,
+	"budget" : 9999
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062372"),
+	"id" : 5,
+	"movie_name" : "Fiorile",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 9328
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062373"),
+	"id" : 22,
+	"movie_name" : "Bells of St. Mary's, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19938
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062376"),
+	"id" : 24,
+	"movie_name" : "Chicago",
+	"movie_genre" : "Comedy|Crime|Drama|Musical",
+	"production_year" : 1990,
+	"budget" : 9335
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062378"),
+	"id" : 18,
+	"movie_name" : "Shanghai",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 1995,
+	"budget" : 15766
+}
+Type "it" for more
+> it
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062379"),
+	"id" : 19,
+	"movie_name" : "Stalingrad",
+	"movie_genre" : "Action|Drama|War|IMAX",
+	"production_year" : 2012,
+	"budget" : 10882
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237a"),
+	"id" : 6,
+	"movie_name" : "Above the Law",
+	"movie_genre" : "Action|Crime|Drama",
+	"production_year" : 2004,
+	"budget" : 11281
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237b"),
+	"id" : 25,
+	"movie_name" : "Lone Wolf and Cub: Baby Cart in Peril (Kozure Ôkami: Oya no kokoro ko no kokoro)",
+	"movie_genre" : "Action",
+	"production_year" : 2009,
+	"budget" : 11329
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237c"),
+	"id" : 3,
+	"movie_name" : "7th Dawn, The",
+	"movie_genre" : "Adventure|Drama|War",
+	"production_year" : 1997,
+	"budget" : 9080
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237d"),
+	"id" : 26,
+	"movie_name" : "Homesman, The",
+	"movie_genre" : "Drama|Western",
+	"production_year" : 1998,
+	"budget" : 18084
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237e"),
+	"id" : 27,
+	"movie_name" : "Sea, The (Hafið)",
+	"movie_genre" : "Drama",
+	"production_year" : 2012,
+	"budget" : 14735
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237f"),
+	"id" : 4,
+	"movie_name" : "Cry in the Night, A",
+	"movie_genre" : "Crime|Drama|Film-Noir",
+	"production_year" : 2003,
+	"budget" : 18541
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062380"),
+	"id" : 28,
+	"movie_name" : "Reykjavik Whale Watching Massacre",
+	"movie_genre" : "Comedy|Horror",
+	"production_year" : 1997,
+	"budget" : 9801
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062381"),
+	"id" : 30,
+	"movie_name" : "Toolbox Murders",
+	"movie_genre" : "Horror|Mystery",
+	"production_year" : 1986,
+	"budget" : 10823
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062382"),
+	"id" : 29,
+	"movie_name" : "Lizzie McGuire Movie, The",
+	"movie_genre" : "Children|Comedy|Romance",
+	"production_year" : 2000,
+	"budget" : 15595
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062383"),
+	"id" : 31,
+	"movie_name" : "Commare secca, La (Grim Reaper, The)",
+	"movie_genre" : "Drama|Mystery",
+	"production_year" : 1999,
+	"budget" : 14782
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062384"),
+	"id" : 32,
+	"movie_name" : "Crash",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2005,
+	"budget" : 15222
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062385"),
+	"id" : 33,
+	"movie_name" : "Herbie Goes Bananas",
+	"movie_genre" : "Adventure|Children|Comedy",
+	"production_year" : 1986,
+	"budget" : 11445
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062386"),
+	"id" : 34,
+	"movie_name" : "Tyler Perry's For Colored Girls",
+	"movie_genre" : "Drama",
+	"production_year" : 1997,
+	"budget" : 11893
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062387"),
+	"id" : 35,
+	"movie_name" : "Lesbian Vampire Killers",
+	"movie_genre" : "Action|Comedy|Horror",
+	"production_year" : 2004,
+	"budget" : 19254
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062388"),
+	"id" : 42,
+	"movie_name" : "Wave, The (Welle, Die)",
+	"movie_genre" : "Drama",
+	"production_year" : 2007,
+	"budget" : 11146
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062389"),
+	"id" : 43,
+	"movie_name" : "Boeing, Boeing",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 15902
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238a"),
+	"id" : 44,
+	"movie_name" : "An Alligator Named Daisy",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 1985,
+	"budget" : 12121
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238b"),
+	"id" : 38,
+	"movie_name" : "Fuhrer Ex (Führer EX)",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 15966
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238c"),
+	"id" : 45,
+	"movie_name" : "After Tiller",
+	"movie_genre" : "Documentary",
+	"production_year" : 2000,
+	"budget" : 15231
+}
+Type "it" for more
+> it
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238d"),
+	"id" : 46,
+	"movie_name" : "Brotherhood of Justice, The",
+	"movie_genre" : "Action|Drama|Thriller",
+	"production_year" : 2000,
+	"budget" : 9845
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238e"),
+	"id" : 47,
+	"movie_name" : "Burma VJ: Reporting from a Closed Country (Burma VJ: Reporter i et lukket land)",
+	"movie_genre" : "Documentary",
+	"production_year" : 2000,
+	"budget" : 9305
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238f"),
+	"id" : 48,
+	"movie_name" : "Free Birds",
+	"movie_genre" : "Action|Adventure|Animation|Children|Comedy|Sci-Fi",
+	"production_year" : 1993,
+	"budget" : 15135
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062390"),
+	"id" : 50,
+	"movie_name" : "The Boy",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 13515
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062391"),
+	"id" : 51,
+	"movie_name" : "Mean Girls 2",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 19123
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062392"),
+	"id" : 52,
+	"movie_name" : "Merry-Go-Round",
+	"movie_genre" : "Drama",
+	"production_year" : 1987,
+	"budget" : 9908
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062393"),
+	"id" : 36,
+	"movie_name" : "Last King of Scotland, The",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2008,
+	"budget" : 17149
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062394"),
+	"id" : 37,
+	"movie_name" : "Mysterians, The (Chikyu Boeigun)",
+	"movie_genre" : "Sci-Fi",
+	"production_year" : 1997,
+	"budget" : 10135
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062395"),
+	"id" : 41,
+	"movie_name" : "Shattered Image",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 1999,
+	"budget" : 15294
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062396"),
+	"id" : 39,
+	"movie_name" : "Breezy",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1997,
+	"budget" : 12043
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062397"),
+	"id" : 40,
+	"movie_name" : "Jefferson in Paris",
+	"movie_genre" : "Drama",
+	"production_year" : 1998,
+	"budget" : 9217
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062398"),
+	"id" : 53,
+	"movie_name" : "Singles",
+	"movie_genre" : "Comedy|Drama|Romance",
+	"production_year" : 2006,
+	"budget" : 12457
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062399"),
+	"id" : 54,
+	"movie_name" : "Meantime",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 16199
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806239a"),
+	"id" : 56,
+	"movie_name" : "The Dependent",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2005,
+	"budget" : 9937
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806239b"),
+	"id" : 61,
+	"movie_name" : "Internship, The",
+	"movie_genre" : "Comedy",
+	"production_year" : 2008,
+	"budget" : 14882
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806239c"),
+	"id" : 62,
+	"movie_name" : "Paris Trout",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 11277
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806239d"),
+	"id" : 63,
+	"movie_name" : "SpaceCamp",
+	"movie_genre" : "Adventure|Sci-Fi",
+	"production_year" : 2007,
+	"budget" : 14551
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806239e"),
+	"id" : 64,
+	"movie_name" : "Sunday Day in Hell, A (En forårsdag i Helvede)",
+	"movie_genre" : "Documentary",
+	"production_year" : 1994,
+	"budget" : 10859
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806239f"),
+	"id" : 66,
+	"movie_name" : "Stepfather, The",
+	"movie_genre" : "Horror|Thriller",
+	"production_year" : 1988,
+	"budget" : 10470
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80623a0"),
+	"id" : 65,
+	"movie_name" : "Touki Bouki",
+	"movie_genre" : "Drama",
+	"production_year" : 2003,
+	"budget" : 10843
+}
+Type "it" for more
+> 
+> db.users.find({"movie_name" :{$eq: "Touki Bouki"}}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf80623a0"),
+	"id" : 65,
+	"movie_name" : "Touki Bouki",
+	"movie_genre" : "Drama",
+	"production_year" : 2003,
+	"budget" : 10843
+}
+> 
+> 
+> db.users.find({"movie_name" :{$ne: "Touki Bouki"}}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062368"),
+	"id" : 7,
+	"movie_name" : "Undead",
+	"movie_genre" : "Action|Comedy|Horror|Sci-Fi",
+	"production_year" : 1997,
+	"budget" : 9447
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236a"),
+	"id" : 10,
+	"movie_name" : "Slumber Party Massacre, The",
+	"movie_genre" : "Horror",
+	"production_year" : 1995,
+	"budget" : 14223
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236c"),
+	"id" : 14,
+	"movie_name" : "How to Make an American Quilt",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1986,
+	"budget" : 11764
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236d"),
+	"id" : 13,
+	"movie_name" : "World of Suzie Wong, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1993,
+	"budget" : 14634
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236e"),
+	"id" : 15,
+	"movie_name" : "Shaka Zulu: The Citadel",
+	"movie_genre" : "Drama",
+	"production_year" : 1995,
+	"budget" : 11499
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236f"),
+	"id" : 16,
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 1991,
+	"budget" : 9347
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062371"),
+	"id" : 2,
+	"movie_name" : "My Little Pony: Equestria Girls",
+	"movie_genre" : "Animation|Children|Fantasy",
+	"production_year" : 2003,
+	"budget" : 9999
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062372"),
+	"id" : 5,
+	"movie_name" : "Fiorile",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 9328
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062373"),
+	"id" : 22,
+	"movie_name" : "Bells of St. Mary's, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19938
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062376"),
+	"id" : 24,
+	"movie_name" : "Chicago",
+	"movie_genre" : "Comedy|Crime|Drama|Musical",
+	"production_year" : 1990,
+	"budget" : 9335
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062378"),
+	"id" : 18,
+	"movie_name" : "Shanghai",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 1995,
+	"budget" : 15766
+}
+Type "it" for more
+> 
+> db.users.find({"budget" :{$gt: 15000}}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062373"),
+	"id" : 22,
+	"movie_name" : "Bells of St. Mary's, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19938
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062378"),
+	"id" : 18,
+	"movie_name" : "Shanghai",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 1995,
+	"budget" : 15766
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237d"),
+	"id" : 26,
+	"movie_name" : "Homesman, The",
+	"movie_genre" : "Drama|Western",
+	"production_year" : 1998,
+	"budget" : 18084
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237f"),
+	"id" : 4,
+	"movie_name" : "Cry in the Night, A",
+	"movie_genre" : "Crime|Drama|Film-Noir",
+	"production_year" : 2003,
+	"budget" : 18541
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062382"),
+	"id" : 29,
+	"movie_name" : "Lizzie McGuire Movie, The",
+	"movie_genre" : "Children|Comedy|Romance",
+	"production_year" : 2000,
+	"budget" : 15595
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062384"),
+	"id" : 32,
+	"movie_name" : "Crash",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2005,
+	"budget" : 15222
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062387"),
+	"id" : 35,
+	"movie_name" : "Lesbian Vampire Killers",
+	"movie_genre" : "Action|Comedy|Horror",
+	"production_year" : 2004,
+	"budget" : 19254
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062389"),
+	"id" : 43,
+	"movie_name" : "Boeing, Boeing",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 15902
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238b"),
+	"id" : 38,
+	"movie_name" : "Fuhrer Ex (Führer EX)",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 15966
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238c"),
+	"id" : 45,
+	"movie_name" : "After Tiller",
+	"movie_genre" : "Documentary",
+	"production_year" : 2000,
+	"budget" : 15231
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238f"),
+	"id" : 48,
+	"movie_name" : "Free Birds",
+	"movie_genre" : "Action|Adventure|Animation|Children|Comedy|Sci-Fi",
+	"production_year" : 1993,
+	"budget" : 15135
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062391"),
+	"id" : 51,
+	"movie_name" : "Mean Girls 2",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 19123
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062393"),
+	"id" : 36,
+	"movie_name" : "Last King of Scotland, The",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2008,
+	"budget" : 17149
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062395"),
+	"id" : 41,
+	"movie_name" : "Shattered Image",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 1999,
+	"budget" : 15294
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062399"),
+	"id" : 54,
+	"movie_name" : "Meantime",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 16199
+}
+Type "it" for more
+> 
+> db.users.find({"budget" :{$gte: 15000}}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062373"),
+	"id" : 22,
+	"movie_name" : "Bells of St. Mary's, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19938
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062378"),
+	"id" : 18,
+	"movie_name" : "Shanghai",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 1995,
+	"budget" : 15766
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237d"),
+	"id" : 26,
+	"movie_name" : "Homesman, The",
+	"movie_genre" : "Drama|Western",
+	"production_year" : 1998,
+	"budget" : 18084
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237f"),
+	"id" : 4,
+	"movie_name" : "Cry in the Night, A",
+	"movie_genre" : "Crime|Drama|Film-Noir",
+	"production_year" : 2003,
+	"budget" : 18541
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062382"),
+	"id" : 29,
+	"movie_name" : "Lizzie McGuire Movie, The",
+	"movie_genre" : "Children|Comedy|Romance",
+	"production_year" : 2000,
+	"budget" : 15595
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062384"),
+	"id" : 32,
+	"movie_name" : "Crash",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2005,
+	"budget" : 15222
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062387"),
+	"id" : 35,
+	"movie_name" : "Lesbian Vampire Killers",
+	"movie_genre" : "Action|Comedy|Horror",
+	"production_year" : 2004,
+	"budget" : 19254
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062389"),
+	"id" : 43,
+	"movie_name" : "Boeing, Boeing",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 15902
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238b"),
+	"id" : 38,
+	"movie_name" : "Fuhrer Ex (Führer EX)",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 15966
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238c"),
+	"id" : 45,
+	"movie_name" : "After Tiller",
+	"movie_genre" : "Documentary",
+	"production_year" : 2000,
+	"budget" : 15231
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238f"),
+	"id" : 48,
+	"movie_name" : "Free Birds",
+	"movie_genre" : "Action|Adventure|Animation|Children|Comedy|Sci-Fi",
+	"production_year" : 1993,
+	"budget" : 15135
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062391"),
+	"id" : 51,
+	"movie_name" : "Mean Girls 2",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 19123
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062393"),
+	"id" : 36,
+	"movie_name" : "Last King of Scotland, The",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2008,
+	"budget" : 17149
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062395"),
+	"id" : 41,
+	"movie_name" : "Shattered Image",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 1999,
+	"budget" : 15294
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062399"),
+	"id" : 54,
+	"movie_name" : "Meantime",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 16199
+}
+Type "it" for more
+> 
+> db.users.find({"budget" :{$lt: 15000}}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062368"),
+	"id" : 7,
+	"movie_name" : "Undead",
+	"movie_genre" : "Action|Comedy|Horror|Sci-Fi",
+	"production_year" : 1997,
+	"budget" : 9447
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236a"),
+	"id" : 10,
+	"movie_name" : "Slumber Party Massacre, The",
+	"movie_genre" : "Horror",
+	"production_year" : 1995,
+	"budget" : 14223
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236c"),
+	"id" : 14,
+	"movie_name" : "How to Make an American Quilt",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1986,
+	"budget" : 11764
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236d"),
+	"id" : 13,
+	"movie_name" : "World of Suzie Wong, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1993,
+	"budget" : 14634
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236e"),
+	"id" : 15,
+	"movie_name" : "Shaka Zulu: The Citadel",
+	"movie_genre" : "Drama",
+	"production_year" : 1995,
+	"budget" : 11499
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236f"),
+	"id" : 16,
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 1991,
+	"budget" : 9347
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062371"),
+	"id" : 2,
+	"movie_name" : "My Little Pony: Equestria Girls",
+	"movie_genre" : "Animation|Children|Fantasy",
+	"production_year" : 2003,
+	"budget" : 9999
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062372"),
+	"id" : 5,
+	"movie_name" : "Fiorile",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 9328
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062376"),
+	"id" : 24,
+	"movie_name" : "Chicago",
+	"movie_genre" : "Comedy|Crime|Drama|Musical",
+	"production_year" : 1990,
+	"budget" : 9335
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062379"),
+	"id" : 19,
+	"movie_name" : "Stalingrad",
+	"movie_genre" : "Action|Drama|War|IMAX",
+	"production_year" : 2012,
+	"budget" : 10882
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237a"),
+	"id" : 6,
+	"movie_name" : "Above the Law",
+	"movie_genre" : "Action|Crime|Drama",
+	"production_year" : 2004,
+	"budget" : 11281
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237b"),
+	"id" : 25,
+	"movie_name" : "Lone Wolf and Cub: Baby Cart in Peril (Kozure Ôkami: Oya no kokoro ko no kokoro)",
+	"movie_genre" : "Action",
+	"production_year" : 2009,
+	"budget" : 11329
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237c"),
+	"id" : 3,
+	"movie_name" : "7th Dawn, The",
+	"movie_genre" : "Adventure|Drama|War",
+	"production_year" : 1997,
+	"budget" : 9080
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237e"),
+	"id" : 27,
+	"movie_name" : "Sea, The (Hafið)",
+	"movie_genre" : "Drama",
+	"production_year" : 2012,
+	"budget" : 14735
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062380"),
+	"id" : 28,
+	"movie_name" : "Reykjavik Whale Watching Massacre",
+	"movie_genre" : "Comedy|Horror",
+	"production_year" : 1997,
+	"budget" : 9801
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062381"),
+	"id" : 30,
+	"movie_name" : "Toolbox Murders",
+	"movie_genre" : "Horror|Mystery",
+	"production_year" : 1986,
+	"budget" : 10823
+}
+Type "it" for more
+> 
+> db.users.find({"budget" :{$lte: 15000}}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062368"),
+	"id" : 7,
+	"movie_name" : "Undead",
+	"movie_genre" : "Action|Comedy|Horror|Sci-Fi",
+	"production_year" : 1997,
+	"budget" : 9447
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236a"),
+	"id" : 10,
+	"movie_name" : "Slumber Party Massacre, The",
+	"movie_genre" : "Horror",
+	"production_year" : 1995,
+	"budget" : 14223
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236c"),
+	"id" : 14,
+	"movie_name" : "How to Make an American Quilt",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1986,
+	"budget" : 11764
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236d"),
+	"id" : 13,
+	"movie_name" : "World of Suzie Wong, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1993,
+	"budget" : 14634
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236e"),
+	"id" : 15,
+	"movie_name" : "Shaka Zulu: The Citadel",
+	"movie_genre" : "Drama",
+	"production_year" : 1995,
+	"budget" : 11499
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236f"),
+	"id" : 16,
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 1991,
+	"budget" : 9347
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062371"),
+	"id" : 2,
+	"movie_name" : "My Little Pony: Equestria Girls",
+	"movie_genre" : "Animation|Children|Fantasy",
+	"production_year" : 2003,
+	"budget" : 9999
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062372"),
+	"id" : 5,
+	"movie_name" : "Fiorile",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 9328
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062376"),
+	"id" : 24,
+	"movie_name" : "Chicago",
+	"movie_genre" : "Comedy|Crime|Drama|Musical",
+	"production_year" : 1990,
+	"budget" : 9335
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062379"),
+	"id" : 19,
+	"movie_name" : "Stalingrad",
+	"movie_genre" : "Action|Drama|War|IMAX",
+	"production_year" : 2012,
+	"budget" : 10882
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237a"),
+	"id" : 6,
+	"movie_name" : "Above the Law",
+	"movie_genre" : "Action|Crime|Drama",
+	"production_year" : 2004,
+	"budget" : 11281
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237b"),
+	"id" : 25,
+	"movie_name" : "Lone Wolf and Cub: Baby Cart in Peril (Kozure Ôkami: Oya no kokoro ko no kokoro)",
+	"movie_genre" : "Action",
+	"production_year" : 2009,
+	"budget" : 11329
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237c"),
+	"id" : 3,
+	"movie_name" : "7th Dawn, The",
+	"movie_genre" : "Adventure|Drama|War",
+	"production_year" : 1997,
+	"budget" : 9080
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237e"),
+	"id" : 27,
+	"movie_name" : "Sea, The (Hafið)",
+	"movie_genre" : "Drama",
+	"production_year" : 2012,
+	"budget" : 14735
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062380"),
+	"id" : 28,
+	"movie_name" : "Reykjavik Whale Watching Massacre",
+	"movie_genre" : "Comedy|Horror",
+	"production_year" : 1997,
+	"budget" : 9801
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062381"),
+	"id" : 30,
+	"movie_name" : "Toolbox Murders",
+	"movie_genre" : "Horror|Mystery",
+	"production_year" : 1986,
+	"budget" : 10823
+}
+Type "it" for more
+> 
+> db.users.find({$and:{"production_year":{$gt:2000}},{"budget":{$gt:10000}}}).pretty()
+uncaught exception: SyntaxError: expected property name, got '{' :
+@(shell):1:51
+> db.users.find({$and:{"production_year":{$gt:2000}},{"budget":{$gt:10000}}}).pretty({})
+uncaught exception: SyntaxError: expected property name, got '{' :
+@(shell):1:51
+> db.users.find({$and:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty({})
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062373"),
+	"id" : 22,
+	"movie_name" : "Bells of St. Mary's, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19938
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062379"),
+	"id" : 19,
+	"movie_name" : "Stalingrad",
+	"movie_genre" : "Action|Drama|War|IMAX",
+	"production_year" : 2012,
+	"budget" : 10882
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237a"),
+	"id" : 6,
+	"movie_name" : "Above the Law",
+	"movie_genre" : "Action|Crime|Drama",
+	"production_year" : 2004,
+	"budget" : 11281
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237b"),
+	"id" : 25,
+	"movie_name" : "Lone Wolf and Cub: Baby Cart in Peril (Kozure Ôkami: Oya no kokoro ko no kokoro)",
+	"movie_genre" : "Action",
+	"production_year" : 2009,
+	"budget" : 11329
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237e"),
+	"id" : 27,
+	"movie_name" : "Sea, The (Hafið)",
+	"movie_genre" : "Drama",
+	"production_year" : 2012,
+	"budget" : 14735
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237f"),
+	"id" : 4,
+	"movie_name" : "Cry in the Night, A",
+	"movie_genre" : "Crime|Drama|Film-Noir",
+	"production_year" : 2003,
+	"budget" : 18541
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062384"),
+	"id" : 32,
+	"movie_name" : "Crash",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2005,
+	"budget" : 15222
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062387"),
+	"id" : 35,
+	"movie_name" : "Lesbian Vampire Killers",
+	"movie_genre" : "Action|Comedy|Horror",
+	"production_year" : 2004,
+	"budget" : 19254
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062388"),
+	"id" : 42,
+	"movie_name" : "Wave, The (Welle, Die)",
+	"movie_genre" : "Drama",
+	"production_year" : 2007,
+	"budget" : 11146
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062389"),
+	"id" : 43,
+	"movie_name" : "Boeing, Boeing",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 15902
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238b"),
+	"id" : 38,
+	"movie_name" : "Fuhrer Ex (Führer EX)",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 15966
+}
+Type "it" for more
+> 
+> db.users.find({$or:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty({})
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236a"),
+	"id" : 10,
+	"movie_name" : "Slumber Party Massacre, The",
+	"movie_genre" : "Horror",
+	"production_year" : 1995,
+	"budget" : 14223
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236c"),
+	"id" : 14,
+	"movie_name" : "How to Make an American Quilt",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1986,
+	"budget" : 11764
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236d"),
+	"id" : 13,
+	"movie_name" : "World of Suzie Wong, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1993,
+	"budget" : 14634
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236e"),
+	"id" : 15,
+	"movie_name" : "Shaka Zulu: The Citadel",
+	"movie_genre" : "Drama",
+	"production_year" : 1995,
+	"budget" : 11499
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062371"),
+	"id" : 2,
+	"movie_name" : "My Little Pony: Equestria Girls",
+	"movie_genre" : "Animation|Children|Fantasy",
+	"production_year" : 2003,
+	"budget" : 9999
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062372"),
+	"id" : 5,
+	"movie_name" : "Fiorile",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 9328
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062373"),
+	"id" : 22,
+	"movie_name" : "Bells of St. Mary's, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19938
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062378"),
+	"id" : 18,
+	"movie_name" : "Shanghai",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 1995,
+	"budget" : 15766
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062379"),
+	"id" : 19,
+	"movie_name" : "Stalingrad",
+	"movie_genre" : "Action|Drama|War|IMAX",
+	"production_year" : 2012,
+	"budget" : 10882
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237a"),
+	"id" : 6,
+	"movie_name" : "Above the Law",
+	"movie_genre" : "Action|Crime|Drama",
+	"production_year" : 2004,
+	"budget" : 11281
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237b"),
+	"id" : 25,
+	"movie_name" : "Lone Wolf and Cub: Baby Cart in Peril (Kozure Ôkami: Oya no kokoro ko no kokoro)",
+	"movie_genre" : "Action",
+	"production_year" : 2009,
+	"budget" : 11329
+}
+Type "it" for more
+> 
+> db.users.find({$nor:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty({})
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062368"),
+	"id" : 7,
+	"movie_name" : "Undead",
+	"movie_genre" : "Action|Comedy|Horror|Sci-Fi",
+	"production_year" : 1997,
+	"budget" : 9447
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236f"),
+	"id" : 16,
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 1991,
+	"budget" : 9347
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062376"),
+	"id" : 24,
+	"movie_name" : "Chicago",
+	"movie_genre" : "Comedy|Crime|Drama|Musical",
+	"production_year" : 1990,
+	"budget" : 9335
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237c"),
+	"id" : 3,
+	"movie_name" : "7th Dawn, The",
+	"movie_genre" : "Adventure|Drama|War",
+	"production_year" : 1997,
+	"budget" : 9080
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062380"),
+	"id" : 28,
+	"movie_name" : "Reykjavik Whale Watching Massacre",
+	"movie_genre" : "Comedy|Horror",
+	"production_year" : 1997,
+	"budget" : 9801
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238d"),
+	"id" : 46,
+	"movie_name" : "Brotherhood of Justice, The",
+	"movie_genre" : "Action|Drama|Thriller",
+	"production_year" : 2000,
+	"budget" : 9845
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238e"),
+	"id" : 47,
+	"movie_name" : "Burma VJ: Reporting from a Closed Country (Burma VJ: Reporter i et lukket land)",
+	"movie_genre" : "Documentary",
+	"production_year" : 2000,
+	"budget" : 9305
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062392"),
+	"id" : 52,
+	"movie_name" : "Merry-Go-Round",
+	"movie_genre" : "Drama",
+	"production_year" : 1987,
+	"budget" : 9908
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062397"),
+	"id" : 40,
+	"movie_name" : "Jefferson in Paris",
+	"movie_genre" : "Drama",
+	"production_year" : 1998,
+	"budget" : 9217
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80623a7"),
+	"id" : 73,
+	"movie_name" : "Dead in the Water",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 1995,
+	"budget" : 9139
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80623d3"),
+	"id" : 109,
+	"movie_name" : "Tribute to a Bad Man",
+	"movie_genre" : "Western",
+	"production_year" : 1986,
+	"budget" : 9942
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80623de"),
+	"id" : 126,
+	"movie_name" : "Something's Gonna Live",
+	"movie_genre" : "Documentary",
+	"production_year" : 2000,
+	"budget" : 9408
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80623f4"),
+	"id" : 140,
+	"movie_name" : "Battle of the Year",
+	"movie_genre" : "Musical",
+	"production_year" : 1992,
+	"budget" : 9517
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062414"),
+	"id" : 179,
+	"movie_name" : "And Life Goes On (a.k.a. Life and Nothing More) (Zendegi va digar hich)",
+	"movie_genre" : "Drama",
+	"production_year" : 1998,
+	"budget" : 9862
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062443"),
+	"id" : 210,
+	"movie_name" : "Butchered",
+	"movie_genre" : "Horror",
+	"production_year" : 1993,
+	"budget" : 9005
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062454"),
+	"id" : 239,
+	"movie_name" : "Bounty Hunter, The",
+	"movie_genre" : "Action|Comedy|Romance",
+	"production_year" : 1993,
+	"budget" : 9702
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062492"),
+	"id" : 290,
+	"movie_name" : "As it is in Heaven (Så som i himmelen)",
+	"movie_genre" : "Drama|Musical|Romance",
+	"production_year" : 1997,
+	"budget" : 9224
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806249c"),
+	"id" : 313,
+	"movie_name" : "Your Highness",
+	"movie_genre" : "Action|Adventure|Comedy|Fantasy",
+	"production_year" : 1997,
+	"budget" : 9964
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80624c1"),
+	"id" : 323,
+	"movie_name" : "Very Good Girls",
+	"movie_genre" : "Drama",
+	"production_year" : 1997,
+	"budget" : 9245
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80624de"),
+	"id" : 378,
+	"movie_name" : "Inbetweeners 2, The",
+	"movie_genre" : "Comedy",
+	"production_year" : 2000,
+	"budget" : 9877
+}
+Type "it" for more
+> 
+> db.users.find({$not:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty({})
+Error: error: {
+	"ok" : 0,
+	"errmsg" : "unknown top level operator: $not",
+	"code" : 2,
+	"codeName" : "BadValue"
+}
+> db.users.find({$not:[{"production_year":2000},{"budget":10000}]}).pretty({})
+Error: error: {
+	"ok" : 0,
+	"errmsg" : "unknown top level operator: $not",
+	"code" : 2,
+	"codeName" : "BadValue"
+}
+> db.users.find({$nor:[{"production_year":2000},{"budget":10000}]}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062368"),
+	"id" : 7,
+	"movie_name" : "Undead",
+	"movie_genre" : "Action|Comedy|Horror|Sci-Fi",
+	"production_year" : 1997,
+	"budget" : 9447
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236a"),
+	"id" : 10,
+	"movie_name" : "Slumber Party Massacre, The",
+	"movie_genre" : "Horror",
+	"production_year" : 1995,
+	"budget" : 14223
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236c"),
+	"id" : 14,
+	"movie_name" : "How to Make an American Quilt",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1986,
+	"budget" : 11764
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236d"),
+	"id" : 13,
+	"movie_name" : "World of Suzie Wong, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1993,
+	"budget" : 14634
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236e"),
+	"id" : 15,
+	"movie_name" : "Shaka Zulu: The Citadel",
+	"movie_genre" : "Drama",
+	"production_year" : 1995,
+	"budget" : 11499
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236f"),
+	"id" : 16,
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 1991,
+	"budget" : 9347
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062371"),
+	"id" : 2,
+	"movie_name" : "My Little Pony: Equestria Girls",
+	"movie_genre" : "Animation|Children|Fantasy",
+	"production_year" : 2003,
+	"budget" : 9999
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062372"),
+	"id" : 5,
+	"movie_name" : "Fiorile",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 9328
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062373"),
+	"id" : 22,
+	"movie_name" : "Bells of St. Mary's, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19938
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062376"),
+	"id" : 24,
+	"movie_name" : "Chicago",
+	"movie_genre" : "Comedy|Crime|Drama|Musical",
+	"production_year" : 1990,
+	"budget" : 9335
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062378"),
+	"id" : 18,
+	"movie_name" : "Shanghai",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 1995,
+	"budget" : 15766
+}
+Type "it" for more
+> 
+> db.users.find({$and:[{"production_year":{$not:{$eq:2000}}},{"budget":{$not:{$eq:10000}}}]}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062368"),
+	"id" : 7,
+	"movie_name" : "Undead",
+	"movie_genre" : "Action|Comedy|Horror|Sci-Fi",
+	"production_year" : 1997,
+	"budget" : 9447
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236a"),
+	"id" : 10,
+	"movie_name" : "Slumber Party Massacre, The",
+	"movie_genre" : "Horror",
+	"production_year" : 1995,
+	"budget" : 14223
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236c"),
+	"id" : 14,
+	"movie_name" : "How to Make an American Quilt",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1986,
+	"budget" : 11764
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236d"),
+	"id" : 13,
+	"movie_name" : "World of Suzie Wong, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1993,
+	"budget" : 14634
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236e"),
+	"id" : 15,
+	"movie_name" : "Shaka Zulu: The Citadel",
+	"movie_genre" : "Drama",
+	"production_year" : 1995,
+	"budget" : 11499
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236f"),
+	"id" : 16,
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 1991,
+	"budget" : 9347
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062371"),
+	"id" : 2,
+	"movie_name" : "My Little Pony: Equestria Girls",
+	"movie_genre" : "Animation|Children|Fantasy",
+	"production_year" : 2003,
+	"budget" : 9999
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062372"),
+	"id" : 5,
+	"movie_name" : "Fiorile",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 9328
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062373"),
+	"id" : 22,
+	"movie_name" : "Bells of St. Mary's, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19938
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062376"),
+	"id" : 24,
+	"movie_name" : "Chicago",
+	"movie_genre" : "Comedy|Crime|Drama|Musical",
+	"production_year" : 1990,
+	"budget" : 9335
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062378"),
+	"id" : 18,
+	"movie_name" : "Shanghai",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 1995,
+	"budget" : 15766
+}
+Type "it" for more
+> 
+> db.users.find({"production_year":{$gt:2000}}).sort({"production_year":1}).limit(10).pretty(()
+... 
+... 
+> 
+> db.users.find({"production_year":{$gt:2000}}).sort({production_year:1).limit(10).pretty()
+... 
+... 
+> db.users.find({"production_year":{gt:2000}}).sort({"production_year":1}).limit(10).pretty()
+> 
+> 
+> 
+> db.users.find({$and:[{"production_year":{$gt:2000}},{"production_year":{$lt:2010}}]}).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062365"),
+	"id" : 8,
+	"movie_name" : "Muppet Treasure Island",
+	"movie_genre" : "Adventure|Children|Comedy|Musical",
+	"production_year" : 2001,
+	"budget" : 16167
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062366"),
+	"id" : 1,
+	"movie_name" : "Boys Town",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 12609
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062367"),
+	"id" : 9,
+	"movie_name" : "Wishful Thinking",
+	"movie_genre" : "Comedy",
+	"production_year" : 2001,
+	"budget" : 18919
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062369"),
+	"id" : 11,
+	"movie_name" : "Soap Girl",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2003,
+	"budget" : 10915
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062370"),
+	"id" : 17,
+	"movie_name" : "The Last of the Finest",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 18119
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062371"),
+	"id" : 2,
+	"movie_name" : "My Little Pony: Equestria Girls",
+	"movie_genre" : "Animation|Children|Fantasy",
+	"production_year" : 2003,
+	"budget" : 9999
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062372"),
+	"id" : 5,
+	"movie_name" : "Fiorile",
+	"movie_genre" : "Drama",
+	"production_year" : 2001,
+	"budget" : 9328
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062375"),
+	"id" : 21,
+	"movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2006,
+	"budget" : 19472
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062377"),
+	"id" : 23,
+	"movie_name" : "Bitch Hug (Bitchkram)",
+	"movie_genre" : "Drama",
+	"production_year" : 2006,
+	"budget" : 10905
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237a"),
+	"id" : 6,
+	"movie_name" : "Above the Law",
+	"movie_genre" : "Action|Crime|Drama",
+	"production_year" : 2004,
+	"budget" : 11281
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237b"),
+	"id" : 25,
+	"movie_name" : "Lone Wolf and Cub: Baby Cart in Peril (Kozure Ôkami: Oya no kokoro ko no kokoro)",
+	"movie_genre" : "Action",
+	"production_year" : 2009,
+	"budget" : 11329
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237f"),
+	"id" : 4,
+	"movie_name" : "Cry in the Night, A",
+	"movie_genre" : "Crime|Drama|Film-Noir",
+	"production_year" : 2003,
+	"budget" : 18541
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062384"),
+	"id" : 32,
+	"movie_name" : "Crash",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2005,
+	"budget" : 15222
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062387"),
+	"id" : 35,
+	"movie_name" : "Lesbian Vampire Killers",
+	"movie_genre" : "Action|Comedy|Horror",
+	"production_year" : 2004,
+	"budget" : 19254
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062388"),
+	"id" : 42,
+	"movie_name" : "Wave, The (Welle, Die)",
+	"movie_genre" : "Drama",
+	"production_year" : 2007,
+	"budget" : 11146
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062389"),
+	"id" : 43,
+	"movie_name" : "Boeing, Boeing",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 15902
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806238b"),
+	"id" : 38,
+	"movie_name" : "Fuhrer Ex (Führer EX)",
+	"movie_genre" : "Drama",
+	"production_year" : 2004,
+	"budget" : 15966
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062390"),
+	"id" : 50,
+	"movie_name" : "The Boy",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 2008,
+	"budget" : 13515
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062391"),
+	"id" : 51,
+	"movie_name" : "Mean Girls 2",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 19123
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062393"),
+	"id" : 36,
+	"movie_name" : "Last King of Scotland, The",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2008,
+	"budget" : 17149
+}
+Type "it" for more
+> 
+> 
+> db.users.find(.pretty()
+... 
+... 
+> 
+> db.users.find({"production_year":{$gt:0}}).sort({production_year:-1}).pretty()
+
+{
+	"_id" : ObjectId("6145627ca992e5dbf806242d"),
+	"id" : 201,
+	"movie_name" : "Long Walk Home, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2013,
+	"budget" : 17483
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80624f0"),
+	"id" : 401,
+	"movie_name" : "Desperate Search",
+	"movie_genre" : "Adventure|Drama",
+	"production_year" : 2013,
+	"budget" : 11459
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062379"),
+	"id" : 19,
+	"movie_name" : "Stalingrad",
+	"movie_genre" : "Action|Drama|War|IMAX",
+	"production_year" : 2012,
+	"budget" : 10882
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806237e"),
+	"id" : 27,
+	"movie_name" : "Sea, The (Hafið)",
+	"movie_genre" : "Drama",
+	"production_year" : 2012,
+	"budget" : 14735
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062415"),
+	"id" : 181,
+	"movie_name" : "Kummeli Goldrush (Kummeli kultakuume)",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 13010
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806241d"),
+	"id" : 185,
+	"movie_name" : "Signs of Life (Lebenszeichen)",
+	"movie_genre" : "Drama",
+	"production_year" : 2012,
+	"budget" : 17983
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062442"),
+	"id" : 225,
+	"movie_name" : "Decoys 2: Alien Seduction ",
+	"movie_genre" : "Horror|Sci-Fi|Thriller",
+	"production_year" : 2012,
+	"budget" : 15131
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062446"),
+	"id" : 229,
+	"movie_name" : "Boxing Gym",
+	"movie_genre" : "Documentary",
+	"production_year" : 2012,
+	"budget" : 17317
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062453"),
+	"id" : 240,
+	"movie_name" : "One in a Million: The Ron LeFlore Story",
+	"movie_genre" : "Drama",
+	"production_year" : 2012,
+	"budget" : 19181
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062456"),
+	"id" : 249,
+	"movie_name" : "Scrooge",
+	"movie_genre" : "Drama|Fantasy|Musical",
+	"production_year" : 2012,
+	"budget" : 18839
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806245a"),
+	"id" : 253,
+	"movie_name" : "You Ain't Seen Nothin' Yet (Vous n'avez encore rien vu)",
+	"movie_genre" : "Drama",
+	"production_year" : 2012,
+	"budget" : 10684
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062467"),
+	"id" : 265,
+	"movie_name" : "Killer at Large",
+	"movie_genre" : "Documentary",
+	"production_year" : 2012,
+	"budget" : 12550
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062469"),
+	"id" : 266,
+	"movie_name" : "How Wang-Fo Was Saved (Comment Wang-Fo fut sauvé)",
+	"movie_genre" : "Animation|Fantasy",
+	"production_year" : 2012,
+	"budget" : 15486
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806247c"),
+	"id" : 287,
+	"movie_name" : "Female Vampire (Les avaleuses) (Erotic Kill)",
+	"movie_genre" : "Horror",
+	"production_year" : 2012,
+	"budget" : 11912
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062488"),
+	"id" : 298,
+	"movie_name" : "Biggles",
+	"movie_genre" : "Adventure|Fantasy|Sci-Fi",
+	"production_year" : 2012,
+	"budget" : 13817
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80624a5"),
+	"id" : 326,
+	"movie_name" : "Kevin Hart: Seriously Funny",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 13503
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80624b0"),
+	"id" : 339,
+	"movie_name" : "Prizefighter and the Lady, The",
+	"movie_genre" : "Comedy|Crime|Romance",
+	"production_year" : 2012,
+	"budget" : 11642
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80624be"),
+	"id" : 349,
+	"movie_name" : "Old Boy",
+	"movie_genre" : "Mystery|Thriller",
+	"production_year" : 2012,
+	"budget" : 14009
+}
+Type "it" for more
+> 
+> 
+> db.users.find({"production_year":{$gt:10}}).sort({production_year:-1}).limit(5).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf806242d"),
+	"id" : 201,
+	"movie_name" : "Long Walk Home, The",
+	"movie_genre" : "Drama",
+	"production_year" : 2013,
+	"budget" : 17483
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80624f0"),
+	"id" : 401,
+	"movie_name" : "Desperate Search",
+	"movie_genre" : "Adventure|Drama",
+	"production_year" : 2013,
+	"budget" : 11459
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062415"),
+	"id" : 181,
+	"movie_name" : "Kummeli Goldrush (Kummeli kultakuume)",
+	"movie_genre" : "Comedy",
+	"production_year" : 2012,
+	"budget" : 13010
+}
+> 
+> db.users.find({"production_year":{$gt:10}},{"movie_genre":0}).sort({production_year:-1}).limit(5).pretty()
+{
+	"_id" : ObjectId("6145627ca992e5dbf806242d"),
+	"id" : 201,
+	"movie_name" : "Long Walk Home, The",
+	"production_year" : 2013,
+	"budget" : 17483
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf80624f0"),
+	"id" : 401,
+	"movie_name" : "Desperate Search",
+	"production_year" : 2013,
+	"budget" : 11459
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf806236b"),
+	"id" : 12,
+	"movie_name" : "Tables Turned on the Gardener",
+	"production_year" : 2012,
+	"budget" : 10829
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062374"),
+	"id" : 20,
+	"movie_name" : "Freeloaders",
+	"production_year" : 2012,
+	"budget" : 15998
+}
+{
+	"_id" : ObjectId("6145627ca992e5dbf8062415"),
+	"id" : 181,
+	"movie_name" : "Kummeli Goldrush (Kummeli kultakuume)",
+	"production_year" : 2012,
+	"budget" : 13010
+}
+> 
