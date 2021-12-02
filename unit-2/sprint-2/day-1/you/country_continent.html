@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country and Countinents</title>
+</head>
+<body>
+    <label>Select_country</label>
+    <select name="country" id="country">
+        <option value="">-Please choose a Country</option>
+        <option value="india">India</option>
+        <option value="usa">United States of America</option>
+        <option value="china">China</option>
+        <option value="nepal">Nepal</option>
+        <option value="austr">Australia</option>
+        <option value="fran">France</option>
+        <option value="germ">Germany</option>
+        <option value="sout">South Africa</option>
+        <option value="nige">Nigeria</option>
+        <option value="mexi">Mexico</option>
+        <option value="arge">Argentina</option>
+        <option value="braz">Brazil</option>
+        <option value="cana">Canada</option>
+        <option value="sigg">Singapore</option>
+        <option value="swed">Sweden</option>
+    </select>
+    <button onclick="find_continent()">Find continent</button>
+    <script type="text/javascript">
+        function find_continent() {
+            var parent = document.getElementById('country').value;
+            switch (parent) {
+                case 'india' :
+                    alert(' The continent is Asia');
+                    break;
+                case 'usa' :
+                    alert(' The continent is North America');
+                    break;
+                case 'china':
+                    alert(' The continent is Asia');
+                    break;
+                case 'nepal':
+                    alert(' The continent is Asia');
+                    break;
+                case 'austr' :
+                    alert(' The continent is Australia');
+                    break;
+                case 'fran':
+                    alert(' The continent is Europe');
+                    break;
+                case 'germ':
+                    alert(' The continent is Europe');
+                    break;
+                case 'sout':
+                    alert(' The continent is Africa');
+                    break;
+                case 'nige':
+                    alert(' The continent is Africa');
+                    break;
+                case 'mexi':
+                    alert(' The continent is North America');
+                    break;
+                case 'arge':
+                    alert(' The continent is South America');
+                    break;
+                case 'braz':
+                    alert(' The continent is South America');
+                    break;
+                case 'cana':
+                    alert(' The continent is North America');
+                    break;
+                case 'sigg':
+                    alert(' The continent is Asia');
+                    break;
+                case 'swed':
+                    alert(' The continent is Europe');
+                    break;
+                default:
+                    alert("Invalid country!");
+            }
+        }
+    </script>
+</body>
+</html>

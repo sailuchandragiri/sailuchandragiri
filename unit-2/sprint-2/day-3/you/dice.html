@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+    <style>
+        #lay{
+            height: 120px;
+            width: 150px;
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 300px;
+            border: 1px solid black;
+            text-align: center;
+            padding-top: 70px;
+            font-size: 60px;
+        }
+        #dice{
+            margin-left: 840px;
+            margin-top: 20px;
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="lay"></div>
+    <button id="dice" onclick="getRandomInt(1,7)">Throw Dice</button>
+    <script>
+        var btn = document.getElementById("dice");
+        var rand = document.getElementById("lay");
+    
+        function getRandomInt(min,max){
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            rand.textContent = Math.floor(Math.random()*(max-min)+min);
+            var val = rand.textContent;
+            if(Number(val) === Number(1)){
+                rand.style.color="red";
+            }else if(Number(val)  === Number(2)){
+                rand.style.color = "pink";
+            }else if(Number(val)  === Number(3)){
+                rand.style.color = "green";
+            }else if(Number(val)  === Number(4)){
+                rand.style.color = "gray";
+            }else if(Number(val)  === Number(5)){
+                rand.style.color = "skyblue";
+            }else if(Number(val) === Number(6)){
+                rand.style.color = "green";
+            }
+            document.body.insertBefore(rand, btn);
+        }
+    </script>
+</body>
+</html>

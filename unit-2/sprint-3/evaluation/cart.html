@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width:10%;
+    }
+    button{
+        margin-bottom: 1%;
+        float: right;
+        padding: 0.5%;
+        background-color: greenyellow;
+    }
+    
+</style>
+<body>
+    <h1>Cart Page</h1>
+    <h2 id="total"></h2>
+    <button onclick="makepayment()">Make Your Payment</button>
+    <div id="data"></div>
+</body>
+</html>
+<script>
+    let cart_data = JSON.parse(localStorage.getItem('cart'));
+
+    let data_div = document.getElementById('data');
+
+    var total = 0;
+
+    cart_data.forEach(function (product){
+        let div = document.createElement("div");
+
+        let j_price = document.createElement("p");
+        j_price.innerHTML = product.price;
+
+        let image = document.createElement("img");
+        image.src = product.image;
+
+        div.append(image, j_price);
+
+        data_div.append(div);
+
+        total=total+Number(product.JSON);
+    });
+
+    let total_h2 = document.getElementById("total");
+
+    total_h2.innerHTML = `Total Price - ${total}Rs`
+
+    function makepayment(){
+        setTimeout(function(){
+            alert("Your order is Successuful");
+        }, 3000);
+    }
+
+</script>

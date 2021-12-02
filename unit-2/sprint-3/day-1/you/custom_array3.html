@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function MyArray() {
+            Object.defineProperty(this, "length",{
+                value: 0,
+                writable: true,
+                enumerable: false,
+                configurable: true,
+            });
+            this.length = arguments.length;
+
+            for (let i=0; i<this.length;i++){
+                this[i]=arguments[i];
+            }
+        }
+        var arr = new MyArray("Raju","Ragu","Rahul","Rama","Radha","Raja");
+
+        MyArray.prototype.push = function (ele){
+            let index = arguments.length;
+            this[index]=ele;
+        };  
+
+        arr.push("sailu");
+
+        console.log(arr);
+
+        var arr1 = Object.values(arr);
+
+        MyArray.prototype.reverse = function (){
+            let ind = arguments.length;
+            for(var i=ind-1;i>=0;i--){
+                this[i]=arguments[i];
+            }
+        }
+
+        console.log(arr1.reverse());
+
+        console.log(arr1);
+
+        console.log(arr1[0]);
+
+        
+    </script>   
+</body>
+</html>

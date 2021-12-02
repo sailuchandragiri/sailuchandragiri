@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #data {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        grid-gap: 5%;
+    }
+
+    img{
+        width: 40%;
+    }
+
+    #data div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+<body>
+    <h1>Products Inventary</h1>
+    <button><a href="cart.html">Visit Cart</a></button>
+
+    <div id="data"></div>
+</body>
+</html>
+<script>
+    //creating the objects
+    const detergents = [
+
+    {
+        name:"Tide",
+        price: "10",
+        image: "http://www.lehwego.com/wp-content/uploads/2014/04/101165_1-tide-plus-detergent-powder.jpg"
+
+    },
+
+    {
+        name:"Surfexcel",
+        price: "20",
+        image: "https://n2.sdlcdn.com/imgs/b/v/x/Surf-Excel-Quick-Wash-Detergent-SDL361546770-1-33ee5.jpg"
+
+    },
+
+    {
+        name:"Nirma",
+        price: "30",
+        image: "https://image1.jdomni.in/product/05102020/FB/CA/BA/74461BD21DF6C416E5477CC35E_1601886117865.jpg?fit=around%7C1024:768"
+
+    },
+
+    {
+        name:"Wheel",
+        price: "25",
+        image: "https://i0.wp.com/www.groceryuncle.com/wp-content/uploads/2019/07/pro_18562.jpg?fit=1000,1000&ssl=1"
+
+    },
+
+    {
+        name:"Ariel",
+        price: "40",
+        image: "https://tse1.mm.bing.net/th?id=OIP.SFmhi8OjBFJAIiulzQh-QwHaHa&pid=Api&P=0&w=300&h=300"
+
+    },
+
+    {
+        name:"Vanish",
+        price: "50",
+        image: "https://n2.sdlcdn.com/imgs/b/0/1/SDL340060805_1-544bd.jpg"
+
+    },
+    ];
+
+    //step2: convert to JSON.
+
+    const  detergents_json = JSON.stringify(detergents);
+
+    //step3: store above data in localstorage.
+    
+    localStorage.setItem("myDetergents", detergents_json);
+
+    //step4: Display on webpages.
+
+    let myDetergents = localStorage.getItem("myDetergents");
+
+    //step4.1: convert into operatable formast, object!.
+    myDetergents = JSON.parse(myDetergents);
+
+    function showProducts(){
+        let data_div = document.getElementById("data");
+
+        myDetergents.forEach(function (product) {
+
+            let div = document.createElement("div");
+
+            let p_name = document.createElement("p");
+
+            p_name.innerText = product.name;
+
+            let p_price = document.createElement("p");
+
+            p_price.innerText = product.price;
+
+            let image = document.createElement("img");
+
+            image.src = product.image;
+
+            let btn = document.createElement("button");
+
+            btn.innerText = "Add to Cart";
+
+            btn.onclick = function() {
+                addtoCart(product);
+            };
+
+            div.append(image, p_name, p_price, btn);
+
+            data_div.append(div);
+        });
+    }
+showProducts();
+
+if(localStorage.getItem("cart")==null){
+    localStorage.setItem("cart", JSON.stringify([]));
+}
+
+function addtoCart(p){
+    let cart_data = JSON.parse(localStorage.getItem("cart"));
+
+    cart_data.push(p);
+
+    localStorage.setItem("cart",JSON.stringify(cart_data));
+}
+
+</script>

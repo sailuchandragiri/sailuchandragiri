@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Change the buttons text color random value</h1>
+    <button id="bt1">Click here to change my color</button>
+    <button id="bt2">Click me to change my color to an array value!</button>
+    <script>
+        var txt = document.getElementById("bt1");
+        function random_color(){
+            txt.style.color = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`
+        }
+        var colors = ["red","green","blue"];
+        var color_1 = document.getElementById("bt2");
+        function change_background(){
+            colors.forEach(element=>color_1.style.backgroundColor=element);
+        }
+
+        txt.addEventListener('click', random_color);
+        color_1.addEventListener('click',change_background);
+
+    </script>
+</body>
+</html>

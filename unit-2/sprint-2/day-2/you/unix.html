@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: rgb(236, 161, 230);
+        }
+        
+        #box {
+            width: 800px;
+            height: 800px;
+            background-color: aliceblue;
+            margin: auto;
+        }
+        
+        #header {
+            background-color: rgb(228, 226, 226);
+            width: 300px;
+            margin: auto;
+            height: 250px;
+            text-align: center;
+            padding: 40px;
+        
+        }
+       
+        img {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        
+        #body {
+            width: 800px;
+            height: 150px;
+            margin: auto;
+            padding: 40px;
+        }
+        
+        #body img {
+            width: 150px;
+            height: 150px;
+            float: left;
+        }
+        
+        #footer {
+            width: 795px;
+            height: 150px;
+            background-color: rgba(235, 76, 18, 0.884);
+            margin: auto;
+        }
+        
+        #footer h4 {
+            color: aliceblue;
+            font-size: 35px;
+            margin: 10px;
+        }
+        
+        .f-left {
+            float: left;
+            text-align: left;
+        }
+        
+        .f-right {
+            float: right;
+            text-align: right;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        .line {
+            width: 3px;
+            height: 100px;
+            background-color: black;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .box1 {
+            width: 395px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button onclick="clickIt()">Create A Page</button>
+    <script>
+        function clickIt() {
+            for (var i = 0; i < 7; i++) {
+                var div1 = document.getElementsByTagName("div")[i];
+                if (i == 0) {
+                    div1.setAttribute("id", "box");
+                } else if (i == 1) {
+                    div1.setAttribute("id", "header");
+                    var z = document.createElement("img");
+                    div1.appendChild(z);
+                    var w = document.querySelectorAll("img")[0];
+                    w.setAttribute("src", "https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/linus.jpg");
+                    div1.setAttribute("class", "img");
+                    var x = document.createElement("h1");
+                    x.textContent = "Linux Torvalds";
+                    div1.appendChild(x);
+                    var y = document.createElement("h2");
+                    y.textContent = "The creator of linux & Git";
+                    div1.appendChild(y);
+                } else if (i == 2) {
+                    div1.setAttribute("id", "body");
+                    var z = document.createElement("img");
+                    div1.appendChild(z);
+                    var l = document.querySelectorAll("img")[1];
+                    l.setAttribute("src", "https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/khan.jpg");
+                    div1.setAttribute("class", "img");
+                    var y = document.createElement("h3");
+                    y.textContent = "Sal Khan";
+                    div1.appendChild(y);
+                    var x = document.createElement("p");
+                    x.textContent = "Linux Torv this is an paragrah which is aa big one ";
+                    div1.appendChild(x);
+                } else if (i == 3) {
+                    div1.setAttribute("id", "footer");
+                    div1.setAttribute("class", "h4")
+                } else if (i == 4) {
+                    div1.setAttribute("class", "f-left box1");
+                    var y = document.createElement("h4");
+                    y.textContent = "Ken Thompson";
+                    div1.appendChild(y);
+                    var x = document.createElement("p");
+                    x.textContent = "Designed and Implemented the original Unix Operating system";
+                    div1.appendChild(x);
+                } else if (i == 5) {
+                    div1.setAttribute("class", "line f-left");
+                } else if (i == 6) {
+                    div1.setAttribute("class", "f-right box1");
+                    var y = document.createElement("h4");
+                    y.textContent = "Dennis Ritchie";
+                    div1.appendChild(y);
+                    var x = document.createElement("p");
+                    x.textContent = "The creator of C programming language";
+                    div1.appendChild(x);
+                }
+            }
+        }
+
+        function divcreate() {
+            let div2 = document.createElement("div");
+            document.body.appendChild(div2);
+            for (var i = 0; i < 3; i++) {
+                if (i == 2) {
+                    let div1 = document.createElement("div");
+                    div2.appendChild(div1);
+                    for (var i = 0; i < 3; i++) {
+                        let div3 = document.createElement("div");
+                        div1.appendChild(div3);
+                    }
+                } else {
+                    let div1 = document.createElement("div");
+                    div2.appendChild(div1);
+                }
+            }
+        }
+
+        function imgcreat(div1) {
+            var x = document.createElement("img")
+            div1.appendChild(x);
+        }
+        console.log(divcreate());
+    </script>
+</body>
+
+</html>

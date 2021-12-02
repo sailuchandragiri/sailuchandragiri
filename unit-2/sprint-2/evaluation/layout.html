@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #layout{
+            height: 900px;
+            width: 1200px;
+            
+            margin: auto;
+            padding: 6px;
+        }
+        .up{
+            height: 40%;
+            width: 100%;
+            
+        }
+        .lay{
+            color: gray;
+            font-size: 20px;
+        }
+        .l1{
+            width: 33%;
+            height: 98%;
+            border: 1px solid gray;
+            grid-area: 'q1';
+        }
+        .l2 {
+            width: 33%;
+            height: 98%;
+            border: 1px solid gray;
+            grid-area: 'q2';
+        }
+        .l3 {
+            width: 33%;
+            height: 98%;
+            border: 1px solid gray;
+            grid-area: 'q3';
+        }
+        .up{
+            display: flex;
+            gap: 2%;
+        }
+        .a{
+            color: gray;
+            font-size: 130%;
+            padding-left: 2%;
+            margin-top: 2%;
+
+        }
+        .b{
+            color: gray;
+            font-size: 130%;
+            padding-left: 2%;
+            margin-top: 2%;
+
+        }
+        .c{
+            color: gray;
+            font-size: 130%;
+            padding-left: 2%;
+            margin-top: 2%;
+        }
+        .a1{
+            font-size: 150%;
+            padding-left: 2%;
+            margin-top: 4%;
+        }
+        .a2{
+            color:  #3949AB;
+            font-size: 130%;
+            padding-left: 2%;
+            margin-top: 10%;
+        }
+        .a3{
+            color:  #3949AB;
+            font-size: 130%;
+            padding-left: 2%;
+            margin-top: 3%;
+
+        }
+        .lay4{
+            color: gray;
+            font-size: 20px;
+            margin-top: 6%;
+            margin-bottom: 3%;
+
+        }
+        #template{
+            display: grid;
+            grid-template-columns: 31.5% 31.5% 31.5%;
+            grid-template-rows: 50% 50%;
+            gap: 2%;
+
+        }
+        .lay51 {
+            border: 1px solid gray;
+           margin-bottom: 4%;
+           padding: 2%;
+        }
+        .t{
+            font-size: 140%;
+        }
+        .t1{
+            font-size: 115%;
+        }
+        @media screen and (max-width: 600px){
+            .up{
+                grid-template: 'q3 q1 q2';
+            }
+            
+        }
+        @media screen and (min-width: 600px){
+            .up{
+                grid-template: 'q3 q2 q1';
+            }
+            
+        }
+        @media screen and (min-width: 900px){
+            .up{
+                grid-template: 'q1 q2 q3';
+            }
+            
+        }
+           
+        
+        
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div class="lay">CHALLANGES SOLVED WITH SANITY</div>
+        <div class="up">
+            <div class="l1"><img src="https://via.placeholder.com/400x300" width="100%" height="50%"/>
+                <div class="a">Eurostar</div>
+                <div class="a1"><b>A better digital experience for millions of travellers</b></div>
+                <div class="a2">Read case study &#8594</div>
+            </div>
+            <div class="l2"><img src="https://via.placeholder.com/400x300" width="100%" height="50%"/>
+                <div class="b">ahm</div>
+                <div class="a1"><b><u>Introducing a powerful backend for Australia's second largest health insurer</u></b></div>
+                <div class="a3">Read case study &#8594</div>
+            </div>
+            <div class="l3"><img src="https://via.placeholder.com/400x300" width="100%" height="50%"/>
+                <div class="c">XXL</div>
+                <div class="a1"><b>Improving time to market for the largest Nordic sports retailer</b></div>
+                <div class="a2">Read case study &#8594</div>
+            </div>
+        </div>
+        <div>
+            <div class="lay4">EXPLORE SOLUTIONS</div>
+            <div id="template">
+                <div class="lay51">
+                    <div class="t"><b>Headless CMS</b></div>
+                    <div class="t1">Build cutting-edge web experiences without &#8594 restrictions</div>
+                </div>
+                <div class="lay51">
+                    <div class="t"><b>Landing page builder</b></div>
+                    <div class="t1">Empower your marketers, unchain your &#8594 engineers.</div>
+                </div>
+                <div class="lay51">
+                    <div class="t"><b>Audience segmentation</b></div>
+                    <div class="t1">Personalize content at scale &#8594 </div>
+                </div>
+                <div class="lay51">
+                    <div class="t"><b>E-commerce</b></div>
+                    <div class="t1">Leverage headlines commerce technology to &#8594 sell anywhere</div>
+                </div>
+                <div class="lay51">
+                    <div class="t"><b>Editorial workflow</b></div>
+                    <div class="t1">Enhance the editorial experience &#8594</div>
+                </div>
+                <div class="lay51">
+                    <div class="t"><b>Multi-dataset architecture</b></div>
+                    <div class="t1">Fuel your entire ecosystem with one &#8594 centralized content hub.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

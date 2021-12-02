@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize</title>
+</head>
+<body>
+    <p>window height:<span id="height"></span></p>
+    <p>window width:<span id="width"></span></p>
+    <script type="text/javascript">
+        const highout = document.querySelector("#height");
+        const highwid = document.querySelector("#width");
+        function resize_window(){
+           highout.textContent=window.innerHeight;
+           highwid.textContent=window.innerWidth; 
+        }
+        window.onresize=resize_window;
+        window.addEventListener('resize',resize_window);
+
+        function change_background(){
+            var random = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
+            document.body.style.backgroundColor=random;
+        }
+        window.addEventListener('resize',change_background);
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        #layout{
+            width: 500px;
+            height: 600px;
+            border: 2px solid dodgerblue;
+            margin: auto;
+            margin-top: 120px;
+            border-radius: 20px;
+            background-image: url('https://tse2.mm.bing.net/th?id=OIP.K4F326N8fjA1EI3NEfsMmgHaEK&pid=Api&P=0&w=340&h=192');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        #promo{
+            margin-top: 30px;
+            font-size: 40px;
+            margin-left: 100px;
+        }
+        #value{
+            margin-left: 40px;
+            height: 50px;
+            width: 300px;
+            margin-left: 100px;
+            margin-top: 40px;
+            border-radius: 20px;
+            font-size: 30px;
+        }
+        #submit{
+            margin-top: 100px;
+            height: 50px;
+            width: 300px;
+            font-size: 40px;
+            margin-left: 100px;
+            padding-bottom: 60px;
+            background-color: greenyellow;
+            border-radius: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="promo">Enter Promo Code</div>
+        <input id="value" type="text" placeholder="Enter Promo Code">
+       
+        <div><button id="submit" >Make Payment</button></div>
+    </div>
+</body>
+</html>
+<script>
+    
+    //console.log(val);
+
+    let btn = document.getElementById("submit");
+    btn.onclick=()=>{
+        let val = document.getElementById("value").value;
+        if(val=="masai30"){
+            
+            location.href="thank_you.html";
+        }else{
+            alert("Please check the Promocode!");
+        }
+    }
+</script>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #data{
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        padding-left: 4%;
+        grid-gap: 6%;
+        background-color: rgb(223, 172, 189);
+        padding-bottom: 3%;
+        padding-top: 1%;
+        
+    }
+    image{
+        width: 20%;
+        
+    }
+
+    #data_div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    #bt{
+        background-color:yellow;
+        float: right;
+        padding: 0.5%;
+        font-size: 150%;
+        border-radius: 15%;
+        
+    }
+    #filter{
+        float: left;
+        margin-right: 2%;
+        padding: 0.5%;
+        font-size: 150%;
+        background-color: aqua;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    h1{
+        padding-left: 42%;
+        font-size: 250%;
+    }
+    
+   
+    
+</style>
+<body>
+    <h1>Online Jewellery Store</h1>
+    <button id="bt"><a href="cart.html">Visit Cart</a></button>
+    <button id="filter">Filter</button>
+    <h2>Traditional</h2>
+    <div id="data"></div>
+    
+</body>
+</html>
+<script>
+    const jewellery = [
+        {
+            price: "25000",
+            image :"https://tse1.mm.bing.net/th?id=OIP.btTjGBSou5StK_heYh5A6AHaLZ&pid=Api&P=0&w=300&h=300"
+        },
+       
+       
+        {
+            price: "15000",
+            image :"https://tse2.mm.bing.net/th?id=OIP.wqOG_XP9rjQYg_wRPB3BRQHaHa&pid=Api&P=0&w=300&h=300"
+        },
+      
+        {
+            price: "95000",
+            image :"https://tse4.mm.bing.net/th?id=OIP.6h9vu8RXjn-AWmvxMIUGHgHaH9&pid=Api&P=0&w=300&h=300"
+        },
+        {
+            price: "25000",
+            image :"https://tse1.mm.bing.net/th?id=OIP.btTjGBSou5StK_heYh5A6AHaLZ&pid=Api&P=0&w=300&h=300"
+        },
+       
+        {
+            price: "15000",
+            image :"https://tse2.mm.bing.net/th?id=OIP.wqOG_XP9rjQYg_wRPB3BRQHaHa&pid=Api&P=0&w=300&h=300"
+        },
+        {
+            price: "95000",
+            image :"https://tse4.mm.bing.net/th?id=OIP.6h9vu8RXjn-AWmvxMIUGHgHaH9&pid=Api&P=0&w=300&h=300"
+        },  
+        {
+            price: "25000",
+            image :"https://tse1.mm.bing.net/th?id=OIP.btTjGBSou5StK_heYh5A6AHaLZ&pid=Api&P=0&w=300&h=300"
+        },
+       
+       
+        {
+            price: "15000",
+            image :"https://tse2.mm.bing.net/th?id=OIP.wqOG_XP9rjQYg_wRPB3BRQHaHa&pid=Api&P=0&w=300&h=300"
+        },
+       
+    ];
+
+    
+    //convert to JSON
+    const jewellery_json = JSON.stringify(jewellery);
+
+
+    //store in local storeage
+    localStorage.setItem("myjewellery",jewellery_json);
+
+    //display on webpage
+    let myjewellery = localStorage.getItem("myjewellery");
+
+    myjewellery = JSON.parse(myjewellery);
+
+   
+
+    function showjewellery(){
+        let data_div = document.getElementById("data");
+
+        myjewellery.forEach(function (product) {
+            let div =document.createElement("div");
+
+            let j_price = document.createElement("p");
+
+            j_price.innerText = product.price;
+
+            let image = document.createElement("img");
+
+            image.src = product.image;
+
+            let btn = document.createElement("button");
+            btn.innerText= "Add to Cart";
+
+            btn.onclick=function(){
+                addtoCart(product);
+            };
+
+            div.append(image, j_price, btn);
+
+            data_div.append(div);
+        });
+    }
+
+showjewellery();
+
+if(localStorage.getItem("cart")==null){
+    localStorage.setItem("cart", JSON.stringify([]));
+}
+
+function addtoCart(p){
+    let cart_data = JSON.parse(localStorage.getItem("cart"));
+
+    cart_data.push(p);
+
+    localStorage.setItem("cart", JSON.stringify(cart_data));
+}
+
+</script>

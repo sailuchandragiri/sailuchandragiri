@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age validator</title>
+</head>
+<body>
+    <label>Year of Birth</label>
+    <input type="text" id="con"/>
+    <label>Gender</label>
+    <select name="gender" id="gen">
+        <option value="">-Please select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <button onclick="check_age()">Check</button>
+    <script>
+        var present_year=2021;
+        function check_age(){
+            var age = document.getElementById("con").value;
+            var ge = present_year-age;
+            
+            if(ge>=18){
+                alert("The user has valid legal age to get marriage!");
+            }else{
+                alert("The user not having the legal age to get marriage!");
+            }
+        }
+    </script>  
+</body>
+</html>

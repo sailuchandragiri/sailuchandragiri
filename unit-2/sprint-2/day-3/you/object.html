@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Initializing the array.
+        var students = ["sailu","kalpana","shas","yamini","sharmi"];
+        //Function to modify the values of the array.
+        function stu(){
+            //Array assigned with different values.
+            let students = ["sai","kalyan","pavan","bhargav","bhunny"];
+            //Changing the values in the array locally.
+            students[0]="sunitha";
+            //Here we are using assign to change the local array values, it won't effect the global values of array.
+            Object.assign([],students)
+            //Consoling the array locally.
+            console.log(students);
+        }
+        //Consoling the array globally.
+        console.log(students);
+        //Calling the function.
+        stu();
+    </script>
+</body>
+</html>

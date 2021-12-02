@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="s1"></div>
+     <div id="s2"></div>
+     <div id="s3"></div>
+     <div id="s4"></div>
+     <div id="s5"></div>
+     <div id="s6"></div>
+     
+    <button onclick="obj()">Objects</button>
+    <button onclick="arr()">Arrays</button>
+    <button onclick="fun()">Functions</button>
+    <button onclick="str()">Strings</button>
+    <button onclick="nu()">Numbers</button>
+    <button onclick="nul()">Null</button>
+    <button onclick="und()">Undefined</button>
+    <script>
+        var objpoints = ["Booleans can be objects (if defined with the new keyword)","Numbers can be objects (if defined with the new keyword)","Strings can be objects (if defined with the new keyword)","Dates are always objects","Maths are always objects","Regular expressions are always objects"];
+        function obj(){
+            var parent = document.getElementById("s1");
+            for(var i=0;i<objpoints.length;i++){
+                var child = document.createElement('li');
+                child.textContent = objpoints[i];
+                parent.appendChild(child);
+            }  
+        }
+
+        var arrpoints = ["JavaScript arrays are used to store multiple values in a single variable.","An array is a special variable, which can hold more than one value at a time.","An array can hold many values under a single name, and you can access the values by referring to an index number.","Spaces and line breaks are not important. A declaration can span multiple lines.","Array indexes start with 0."];
+        function arr(){
+            var parent = document.getElementById("s2");
+            for(var i=0;i<arrpoints.length;i++){
+                var child = document.createElement('li');
+                child.textContent = arrpoints[i];
+                parent.appendChild(child);
+            }  
+        }
+
+        var funpoints = ["A JavaScript function is a block of code designed to perform a particular task.","A JavaScript function is executed when something invokes it (calls it).","A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().","Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).","Function parameters are listed inside the parentheses () in the function definition.","Function arguments are the values received by the function when it is invoked.","A Function is much the same as a Procedure or a Subroutine, in other programming languages."];
+        function fun(){
+            var parent = document.getElementById("s3");
+            for(var i=0;i<funpoints.length;i++){
+                var child = document.createElement('li');
+                child.textContent = funpoints[i];
+                parent.appendChild(child);
+            }  
+        }
+
+        var strpoints = ["JavaScript strings are used for storing and manipulating text.","A JavaScript string is zero or more characters written inside quotes.","The solution to avoid this problem, is to use the backslash escape character.","If a JavaScript statement does not fit on one line, the best place to break it is after an operator","But strings can also be defined as objects with the keyword new"];
+        function str(){
+            var parent = document.getElementById("s3");
+            for(var i=0;i<strpoints.length;i++){
+                var child = document.createElement('li');
+                child.textContent = strpoints[i];
+                parent.appendChild(child);
+            }  
+        }
+
+        var nupoints = ["JavaScript has only one type of number. Numbers can be written with or without decimals.","Extra large or extra small numbers can be written with scientific (exponent) notation","Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.","JavaScript numbers are always stored as double precision floating point numbers, following the international IEEE 754 standard.","This format stores numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63","Integers (numbers without a period or exponent notation) are accurate up to 15 digits.","JavaScript uses the + operator for both addition and concatenation.Numbers are added. Strings are concatenated."];
+        function nu(){
+            var parent = document.getElementById("s4");
+            for(var i=0;i<nupoints.length;i++){
+                var child = document.createElement('li');
+                child.textContent = nupoints[i];
+                parent.appendChild(child);
+            }  
+        }
+        var nulpoints = ["The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values and is treated as falsy for boolean operations.","The value null is written with a literal: null.null"," Instead, null expresses a lack of identification, indicating that a variable points to no object.","In APIs, null is often retrieved in a place where an object can be expected but no object is relevant.","When checking for null or undefined, beware of the differences between equality (==) and identity (===) operators, as the former performs type-conversion."];
+        function nul(){
+            var parent = document.getElementById("s5");
+            for(var i=0;i<nulpoints.length;i++){
+                var child = document.createElement('li');
+                child.textContent = nulpoints[i];
+                parent.appendChild(child);
+            }  
+        }
+
+        var undpoints = ["The global undefined property represents the primitive value undefined. It is one of JavaScript's primitive types.","undefined is a property of the global object.That is, it is a variable in global scope. The initial value of undefined is the primitive value undefined.","A variable that has not been assigned a value is of type undefined.","A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value.","A function returns undefined if a value was not returned."," JavaScript is a statically scoped language, so knowing if a variable is declared can be read by seeing whether it is declared in an enclosing context.","One reason to use typeof is that it does not throw an error if the variable has not been declared."];
+        function und(){
+            var parent = document.getElementById("s6");
+            for(var i=0;i<undpoints.length;i++){
+                var child = document.createElement('li');
+                child.textContent = undpoints[i];
+                parent.appendChild(child);
+            }  
+        }
+    </script>
+</body>
+</html>
