@@ -1,0 +1,51 @@
+#TodoLayout{
+    width:60%;
+    height:300px;
+    border:1px solid black;
+    overflow:scroll;
+    margin:auto;
+}
+#loginlayout{
+    width:30%;
+    height:300px;
+    margin:auto;
+    margin-top:20px;
+    border:1px solid black;
+    background-color:coral;
+}
+
+#formlayout{
+    width:80%;
+    margin-top:40px;
+    margin:auto;
+}
+
+.email,.password{
+    width:90%;
+    border:none;
+    margin:20px;
+    border-bottom:1px solid rgb(153, 152, 152);
+    height:30px;
+}
+.btn{
+    width:30%;
+    height:30px;
+    border:none;
+}
+.loginText{
+    padding-top:20px;
+    font-size: 20px;
+    font-style: italic;
+    color:white;
+}
+#input {
+    width:49%;
+    height:20px;
+    margin:20px;
+    margin:auto;
+}
+#addbtn{
+    width:8%;
+    height:20px;
+    margin:20px;
+}

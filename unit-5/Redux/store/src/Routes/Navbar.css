@@ -1,0 +1,18 @@
+#navbarlayout {
+    width:60%;
+    height:20px;
+    background-color:black;
+    color:white;
+    text-decoration: none;
+    padding:20px;
+    margin:auto;
+}
+
+.home,.login{
+    text-decoration: none;
+    color:white;
+    margin:20px;
+}
+.home{
+    margin-left:60%;
+}
