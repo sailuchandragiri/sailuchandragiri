@@ -1,0 +1,45 @@
+#NavbarLayout{
+    width:80%;
+    height:20px;
+    margin:auto;
+    background-color:black;
+    color:white;
+    text-decoration: none;
+    font-size:20px;
+    padding:30px;
+    margin-bottom:30px;
+}
+.Home
+{
+    color:white;
+    padding:20px;
+    text-decoration: none;
+    margin-left:60%;
+}
+.Login,.Dashboard,.Setting {
+    color:white;
+    padding:20px;
+    text-decoration: none;
+}
+
+#loginLayout{
+    width:50%;
+    height:200px;
+    margin:auto;
+    border:1px solid coral;
+}
+
+.Email,.Password {
+    width:90%;
+    height:30px;
+    border:none;
+    border-bottom:1px solid greenyellow;
+   margin-top:20px;
+}
+
+.loginbtn{
+    width:30%;
+    height:30px;
+    border:none;
+    margin-top:30px;
+}
