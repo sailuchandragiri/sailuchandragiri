@@ -2,6 +2,8 @@ import {Link,Switch,Route} from 'react-router-dom';
 import {Home} from "./Home";
 import {Loginpage} from "./Loginpage";
 import "./Navbar.css";
+
+
 export function Routes(){
     return (<div>
         <div id="navbarlayout">

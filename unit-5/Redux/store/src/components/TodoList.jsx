@@ -18,7 +18,7 @@ export const TodoList = () =>{
         //dispatch(test);
       }
     return <div id="TodoLayout">
-        {/* {todo.map(item=><div key={item.id}>{item.title}</div>)} */}
+        
         {
           todos.filter(item=>showtask?true:!item.status).map((item)=><>
         <button onClick={()=>handleToggle(item.id)}>
