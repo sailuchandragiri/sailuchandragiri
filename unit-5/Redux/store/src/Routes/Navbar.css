@@ -1,10 +1,10 @@
 #navbarlayout {
     width:60%;
-    height:20px;
+    height:30px;
     background-color:black;
     color:white;
     text-decoration: none;
-    padding:20px;
+    padding:18px;
     margin:auto;
 }
 
