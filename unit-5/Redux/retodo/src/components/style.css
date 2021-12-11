@@ -1,0 +1,19 @@
+#layout{
+    width:60%;
+    height:300px;
+    border:1px solid black;
+    overflow:scroll;
+    margin:auto;
+}
+
+.text{
+    width:45%;
+    height:20px;
+    margin:auto;
+    margin:20px;
+}
+.btn{
+    width:10%;
+    margin:20px;
+    height:20px;
+}
