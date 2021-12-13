@@ -36,10 +36,16 @@ export const Login=()=>{
     return(
         <div className="login">
             <h1>Login</h1>
-            <label>email</label>
-            <input value={email} onChange={(e) => {setEmail(e.target.value)}} type="text"></input>
-            <input value={password} onChange={(e) => {setPassword(e.target.value)}} type="password"></input>
-            <input onClick={getData} type="submit" value="LOGIN TO DASHBOARD"></input>
+            <div>
+            
+            <input  className="email" value={email} onChange={(e) => {setEmail(e.target.value)}} placeholder="Enter UserName" type="text"></input>
+            </div>
+            <div >
+            <input  className="pass" value={password} onChange={(e) => {setPassword(e.target.value)}} placeholder="Enter Password" type="password"></input>
+            </div>
+            <div >
+            <input className="submit" onClick={getData} type="submit" value="LOGIN"></input>
+            </div>
         </div>
     );
 };

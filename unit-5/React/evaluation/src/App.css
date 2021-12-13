@@ -7,6 +7,43 @@
   pointer-events: none;
 }
 
+.email{
+  border: 0.5px solid black;
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  width: 300px;
+  font-size: 20px;
+}
+
+.pass{
+  border: 0.5px solid black;
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  width: 300px;
+  margin-top: 30px;
+  font-size: 20px;
+}
+.submit{
+  border: 0.5px solid black;
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  width: 100px;
+  margin-top: 30px;
+  background-color: blue;
+  color: white;
+}
+.login{
+  background-color: rgb(142, 228, 243);
+  height: 720px;
+}
+
+.lay{
+  display: flex;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
