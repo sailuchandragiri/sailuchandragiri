@@ -15,9 +15,20 @@ export const Dashboard=()=>{
         <div className="dashboard">
             {data.products.map((product)=>(
                 <div className="lay">
-                    <div className='lay'>
-                        <div><img src={product.image}></img></div>
-                        <button>Add to cart</button>
+                    <div className="layout">
+                        <br/>
+
+                        <div className="title">{product.title}</div> 
+                        <br/>
+                        <div className="image"><img className="img" src={product.image}></img></div>
+                        <div className="price">Price: {product.price}/-</div>
+                        <br/>
+                        <div className="des"> {product.description}</div> 
+                        <br/>
+                        <br/>
+                    <button>Add to cart</button>
+                    <hr></hr>
+                       
                     </div>
                 </div>
             ))}

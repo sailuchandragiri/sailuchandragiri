@@ -42,6 +42,28 @@
 
 .lay{
   display: flex;
+  background-color: #61dafb;
+justify-content: space-around;
+}
+
+.des{
+  color: blue
+}
+
+
+
+.title{
+  color: red;
+  
+}
+
+.price{
+  color:green
+}
+
+.img{
+  height: 200px;
+  width: 200px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -60,6 +82,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
 
 .App-link {
   color: #61dafb;
