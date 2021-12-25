@@ -1,0 +1,477 @@
+.main_layout{
+    height: 5000px;
+    width: 1660px;
+    background: linear-gradient(
+        to top,
+        #413f3f 91%,
+        #23105f 10% 
+    );
+}
+
+.navbar{
+    height: 40px;
+    padding: 10px;
+    width: 1660px;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav_left{
+    height: 35px;
+    width: 250px;
+    display: flex;
+}
+
+.logo{
+    height: 35px;
+    width: 110px;
+}
+
+.btn1{
+    display: flex;
+    height: 35px;
+    width: 110px;
+    margin-left: 10px;
+    background-color: #1bb76e;
+    border-radius: 4px;
+}
+
+.plus{
+    margin-top: 8px;
+    margin-left: 3px;
+}
+
+.new{
+    color: white;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+
+
+.nav_middle{
+    height: 35px;
+    width: 500px;
+    margin-left: 320px;
+    display: flex;
+    border-radius: 4px;
+    background-color: #2e3035;
+}
+
+
+.place{
+    height: 30px;
+    width: 450px;
+    background-color: #2e3035;
+    color: white;
+    border: none;
+    
+}
+.nn{
+    color: white;
+}
+.search{
+    margin-top: 5px;
+    margin-right: 0px;
+    margin-left: 4px;
+    
+}
+
+
+.nav_right{
+    height: 35px;
+    width: 300px;
+    margin-left: 260px;
+    display: flex;
+}
+
+.tag{
+    height: 35px;
+    width: 20px;
+    border: 1px solid white;
+}
+
+.go{
+    height: 25px;
+    width: 70px;
+    margin-left: 20px;
+    background-color: #6432f9;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    font-style: bold;
+    font-weight: 500px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.sign_in{
+    height: 25px;
+    width: 65px;
+    color: white;
+    font-size: 15px;
+    padding-left: 15px;
+    margin-top: 8px;
+}
+
+.sign_up{
+    height: 30px;
+    width: 75px;
+    background-color: #1bb76e;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    padding-left: 8px;
+    padding-top: 5px;
+
+}
+
+.slido{
+   height: 230px;
+   width: 1660px; 
+}
+
+.top{
+    height: 30px;
+    width: 800px;
+    font-size: 25px;
+    color: #aed8ea;
+    margin-left: 470px;
+    letter-spacing: 3px;
+    font-style: bold;
+}
+
+.mid{
+    height: 30px;
+    width: 1420px;
+    margin-left: 130px;
+    display: flex;
+}
+
+.down{
+    height: 150px;
+    width: 1400px;
+    margin-left: 120px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.explo{
+    height: 30px;
+    width: 180px;
+    font-size: 18px;
+    color: rgb(175, 169, 169);
+}
+
+.one{
+    width: 230px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/one.png?raw=true");
+    background-size: cover;
+}
+
+.two{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/two.png?raw=true");
+    background-size: cover;
+}
+
+.three{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/three.png?raw=true");
+    background-size: cover;
+}
+
+.four{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/four.png?raw=true");
+    background-size: cover;
+}
+
+.five{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/five.png?raw=true");
+    background-size: cover;
+}
+
+.six{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/six.png?raw=true");
+    background-size: cover;
+}
+
+.seven{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/seven.png?raw=true");
+    background-size: cover;
+}
+
+.eight{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/eight.png?raw=true");
+    background-size: cover;
+}
+
+.nine{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/nine.png?raw=true");
+    background-size: cover;
+}
+
+.ten{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/ten.png?raw=true");
+    background-size: cover;
+}
+
+.level{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/leven.png?raw=true");
+    background-size: cover;
+}
+
+.twel{
+    width: 100px;
+    border-radius: 10px;
+    background-image: url("https://github.com/sailuchandragiri/sailuchandragiri/blob/main/twel.png?raw=true");
+    background-size: cover;
+}
+
+.one1{
+    height: 55%;
+    width: 100%;
+}
+
+.one2{
+    height: 45%;
+    width: 100%;
+    background-color: rgb(197, 101, 121); 
+    color: rgb(230, 141, 159); 
+}
+
+.two1{
+    height: 55%;
+    width: 100%;
+
+}
+
+.two2{
+    height: 45%;
+    width: 100%;
+    background-color: rgb(0, 130, 97);  
+    color: rgb(17, 201, 155);
+
+}
+.three1{
+    height: 55%;
+    width: 100%;
+}
+
+.three2{
+    height: 45%;
+    width: 100%; 
+    background-color: rgb(170, 51, 230);
+    color: rgb(193, 135, 223);  
+
+}
+
+.four1{
+    height: 55%;
+    width: 100%;
+}
+
+.four2{
+    height: 45%;
+    width: 100%;
+    background-color: rgb(80, 83, 90); 
+    color: rgb(166, 169, 177); 
+
+}
+
+.five1{
+    height: 55%;
+    width: 100%;
+}
+
+.five2{
+    height: 45%;
+    width: 100%;   
+    background-color: rgb(129, 176, 87); 
+    color: rgb(179, 223, 141); 
+
+}
+
+.six1{
+    height: 45%;
+    width: 100%;
+}
+
+.six2{
+    height: 55%;
+    width: 100%; 
+    background-color: rgb(184, 94, 68);  
+    color: rgb(233, 179, 164);
+
+}
+
+.seven1{
+    height: 45%;
+    width: 100%;
+}
+.seven2{
+    height: 55%;
+    width: 100%;  
+    background-color: rgb(50, 141, 103);  
+    color: rgb(133, 228, 188);
+
+}
+
+.eight1{
+    height: 55%;
+    width: 100%;
+}
+
+.eight2{
+    height: 45%;
+    width: 100%;
+    background-color: rgb(200, 55, 74);  
+    color: rgb(240, 154, 166);
+
+}
+
+.nine1{
+    height: 55%;
+    width: 100%;
+}
+
+.nine2{
+    height: 45%;
+    width: 100%; 
+    background-color: rgb(145, 51, 141);  
+    color: rgb(245, 179, 242);
+
+}
+
+.ten1{
+    height: 55%;
+    width: 100%;
+}
+
+.ten2{
+    height: 45%;
+    width: 100%; 
+    background-color: rgb(81, 83, 90);
+    color: rgb(194, 196, 202);  
+
+}
+
+.level1{
+    height: 55%;
+    width: 100%;
+}
+
+.level2{
+    height: 45%;
+    width: 100%;
+    background-color: rgb(50, 141, 103); 
+    color: rgb(150, 206, 183); 
+
+}
+
+.twel1{
+    height: 55%;
+    width: 100%;
+}
+
+.twel2{
+    height: 45%;
+    width: 100%;
+    background-color: rgb(30, 95, 67);  
+    color: rgb(153, 218, 190);
+
+}
+
+
+.more{
+    height: 30px;
+    width: 120px;
+    margin-left: 1100px;
+    font-size: 18px;
+    color: rgb(175, 169, 169);
+}
+
+
+.first{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.second{
+    text-align: center;
+    font-size: 10px;
+}
+
+#page{
+    border: 1px solid white;
+    height:4500px;
+    width: 1400px;
+    margin-left: 130px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    overflow: scroll;
+    color: white;
+}
+
+
+
+
+
+#santa{
+  border: 1px solid white;
+
+  
+}
+
+#sa_img{
+    height: 90%;
+    width: 100%;
+}
+
+.page_one{
+    height: 30px;
+    width: 1400px;
+    margin-left: 130px;
+    display: flex;
+}
+
+.page11{
+    height: 100%;
+    width: 200px;
+    color: rgb(175, 169, 169);
+    font-size: 20px;
+}
+
+.page12{
+    height: 100%;
+    width: 400px;
+    margin-left: 800px;
+    text-align: right;
+    color: rgb(175, 169, 169);
+    font-size: 20px;
+}
