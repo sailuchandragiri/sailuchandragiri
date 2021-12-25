@@ -1,0 +1,26 @@
+
+#main{
+    width: 400px;
+    height: 500px;
+    border: 3px solid black;
+    overflow: scroll;
+    font-size: 35px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: black;
+    color: white;
+
+}
+
+
+.body{
+    background-image: url("https://tse4.mm.bing.net/th?id=OIP.pInTAkRblL-XykQgH_Aq0AHaEo&pid=Api&P=0&w=277&h=174");
+    background-size: cover;
+}
+
+.h1{
+    margin-left: 700px;
+    margin-top: 100px;
+    color: white;
+    font-size: 40px;
+}
